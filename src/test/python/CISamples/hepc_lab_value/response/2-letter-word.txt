@@ -1,0 +1,166 @@
+{
+	"docId": "6a5ee195-607c-4643-b6f8-d16b92cc482e",
+	"genderDiscrepancy": null,
+	"dob": null,
+	"gender": null,
+	"age": null,
+	"labValues": [
+		{
+			"id": null,
+			"sentence": [
+				0,
+				26
+			],
+			"sectionOffset": [
+				0,
+				26
+			],
+			"text": [
+				"Cr",
+				0,
+				2
+			],
+			"sectionOid": "SIMPLE_SEGMENT",
+			"attributes": {
+				"polarity": "positive",
+				"generic": "false",
+				"conditional": "false",
+				"modality": "N/A",
+				"uncertainty": "false",
+				"labValue": [
+					"171",
+					16,
+					19
+				],
+				"labValueUnit": [
+					"mcg/dL",
+					20,
+					26
+				]
+			},
+			"aspect": null,
+			"name": null,
+			"umlsConcept": [
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "CREAT"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "Test;creatinine"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "ASSAY OF CREATININE"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "lab-based chem measurements creatinine"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "CREATININE BLOOD"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "Cr"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "measurement of creatinine (lab test)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "Creatinine measurement (procedure)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "Blood creatinine"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "blood creatinine level (lab test)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "Creatinine"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "Blood creatinine level"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "Creatinine; blood"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "Creatinine measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "creatinine test"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "Measurement of creatinine"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201975",
+					"preferredText": "Creatinine measurement, NOS"
+				}
+			]
+		}
+	]
+}

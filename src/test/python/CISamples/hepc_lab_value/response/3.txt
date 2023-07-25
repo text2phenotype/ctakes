@@ -1,0 +1,193 @@
+{
+	"docId": "052227d4-f8e9-472a-a810-5c17f245c6fc",
+	"genderDiscrepancy": null,
+	"dob": null,
+	"gender": null,
+	"age": null,
+	"labValues": [
+		{
+			"id": null,
+			"sentence": [
+				0,
+				25
+			],
+			"sectionOffset": [
+				0,
+				25
+			],
+			"text": [
+				"PT",
+				0,
+				2
+			],
+			"sectionOid": "SIMPLE_SEGMENT",
+			"attributes": {
+				"polarity": "positive",
+				"generic": "false",
+				"conditional": "false",
+				"modality": "N/A",
+				"uncertainty": "false",
+				"labValue": [],
+				"labValueUnit": []
+			},
+			"aspect": null,
+			"name": null,
+			"umlsConcept": [
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "Prothrombin Time"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "PT - Prothrombin time"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "PT"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "Plasma Prothrombin Test"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "Prothrombin Times"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "Protime"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "Time, Prothrombin"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "PTT - Prothrombin time"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "Prothrombin time (procedure)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "One stage prothrombin time"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "One stage prothrombin time (procedure)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "prothrombin time (PT) (lab test)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "Prothrombin time assay"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "Quick one stage prothrombin time"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "Times, Prothrombin"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "Prothrombin time"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "Prothrombin time (PT)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "Pro-thrombin time"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "Prothrombin Time Test"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "Prothrombin test"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "PT assay"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0033707",
+					"preferredText": "Test;prothrombin time"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--Options-->
+    <bean id="cancer_topography_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/cancer-topology.xml"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="cancer_topography_code_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/cancer-topology-code.xml"/>
+                <entry key="LookupMode" value="code"/>
+            </map>
+        </property>
+    </bean>
+
+    <!--Controllers-->
+
+    <bean id="cancer_topology_default_clinical" parent="default_clinical" lazy-init="true">
+        <property name="dict" value="cancer-topography"/>
+        <property name="cli_options" ref="cancer_topography_cliOptionals"/>
+    </bean>
+
+    <bean id="cancer_topology_code_default_clinical" parent="default_clinical" lazy-init="true">
+        <property name="dict" value="cancer-topography"/>
+        <property name="cli_options" ref="cancer_topography_code_cliOptionals"/>
+        <property name="params">
+            <map>
+                <entry key="lookup_mode" value="code"/>
+            </map>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:config="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <config:component-scan base-package="com.text2phenotype.ctakes.rest.app"/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name = "prefix" value = "/WEB-INF/pages/" />
+        <property name = "suffix" value = ".jsp" />
+    </bean>
+
+    <util:map id="endpoints">
+        <entry key="default_clinical" value="Default Clinical Pipeline"/>
+        <entry key="temporal_module" value="Temporal Module"/>
+        <entry key="drug_ner" value="Drug Named Entity Recognition"/>
+        <entry key="smoking_status" value="Smoking Status"/>
+        <entry key="lab_value" value="Lab values"/>
+        <entry key="pos_tagger" value="POS Tagger"/>
+        <entry key="npi_recognition" value="NPI recognition"/>
+        <entry key="address" value="Addresses recognition"/>
+    </util:map>
+
+</beans>

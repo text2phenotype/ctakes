@@ -1,0 +1,8 @@
+// CUI|TUI|CODE|VOCAB|TXT|PREF TEXT
+C000001|T109|1|CUSTOM|Drug|Any drugs
+C000002|T019|2|CUSTOM|Disease|Any Disease
+C000003|T033|3|CUSTOM|Finding|Any Finding
+C000004|T060|4|CUSTOM|Procedure|Any Procedure
+C000005|T021|5|CUSTOM|Anatomical site|Any Anatomical site
+C000006|T034|6|CUSTOM|Lab|Any Lab
+C000007|T058|7|CUSTOM|Activity|Any Activity

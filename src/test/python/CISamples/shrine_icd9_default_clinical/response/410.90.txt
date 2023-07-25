@@ -1,0 +1,154 @@
+{
+	"jira": "projects/BIOMED/versions/11243",
+	"user": null,
+	"timestamp": null,
+	"date": null,
+	"version": "Version 1.2.1 ECHO HepC",
+	"docId": "c3c0007e-e0d3-49e2-b473-56e70986323d",
+	"genderDiscrepancy": null,
+	"dob": null,
+	"gender": null,
+	"age": null,
+	"content": [
+		{
+			"id": null,
+			"sentence": [
+				0,
+				60
+			],
+			"sectionOffset": [
+				0,
+				60
+			],
+			"text": [
+				"410.90",
+				5,
+				11
+			],
+			"sectionOid": "SIMPLE_SEGMENT",
+			"attributes": {
+				"polarity": "positive",
+				"generic": "false",
+				"conditional": "false",
+				"modality": "N/A",
+				"uncertainty": "false"
+			},
+			"aspect": "prob",
+			"name": "DiseaseDisorderMention",
+			"umlsConcept": [
+				{
+					"code": "410.90",
+					"tui": "T047",
+					"codingScheme": "ICD9CM",
+					"cui": "C0155626",
+					"preferredText": "AMI NOS, UNSPECIFIED"
+				}
+			]
+		},
+		{
+			"id": null,
+			"sentence": [
+				0,
+				60
+			],
+			"sectionOffset": [
+				0,
+				60
+			],
+			"text": [
+				"410.90",
+				22,
+				28
+			],
+			"sectionOid": "SIMPLE_SEGMENT",
+			"attributes": {
+				"polarity": "positive",
+				"generic": "false",
+				"conditional": "false",
+				"modality": "N/A",
+				"uncertainty": "false"
+			},
+			"aspect": "prob",
+			"name": "DiseaseDisorderMention",
+			"umlsConcept": [
+				{
+					"code": "410.90",
+					"tui": "T047",
+					"codingScheme": "ICD9CM",
+					"cui": "C0155626",
+					"preferredText": "AMI NOS, UNSPECIFIED"
+				}
+			]
+		},
+		{
+			"id": null,
+			"sentence": [
+				0,
+				60
+			],
+			"sectionOffset": [
+				0,
+				60
+			],
+			"text": [
+				"410.90",
+				37,
+				43
+			],
+			"sectionOid": "SIMPLE_SEGMENT",
+			"attributes": {
+				"polarity": "positive",
+				"generic": "false",
+				"conditional": "false",
+				"modality": "N/A",
+				"uncertainty": "false"
+			},
+			"aspect": "prob",
+			"name": "DiseaseDisorderMention",
+			"umlsConcept": [
+				{
+					"code": "410.90",
+					"tui": "T047",
+					"codingScheme": "ICD9CM",
+					"cui": "C0155626",
+					"preferredText": "AMI NOS, UNSPECIFIED"
+				}
+			]
+		},
+		{
+			"id": null,
+			"sentence": [
+				0,
+				60
+			],
+			"sectionOffset": [
+				0,
+				60
+			],
+			"text": [
+				"410.90",
+				54,
+				60
+			],
+			"sectionOid": "SIMPLE_SEGMENT",
+			"attributes": {
+				"polarity": "positive",
+				"generic": "false",
+				"conditional": "false",
+				"modality": "N/A",
+				"uncertainty": "false"
+			},
+			"aspect": "prob",
+			"name": "DiseaseDisorderMention",
+			"umlsConcept": [
+				{
+					"code": "410.90",
+					"tui": "T047",
+					"codingScheme": "ICD9CM",
+					"cui": "C0155626",
+					"preferredText": "AMI NOS, UNSPECIFIED"
+				}
+			]
+		}
+	]
+}

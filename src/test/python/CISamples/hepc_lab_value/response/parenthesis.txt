@@ -1,0 +1,385 @@
+{
+	"docId": "7d7bf1e4-3a41-42ee-b2b5-7450a7d0ed05",
+	"genderDiscrepancy": null,
+	"dob": null,
+	"gender": null,
+	"age": null,
+	"labValues": [
+		{
+			"id": null,
+			"sentence": [
+				0,
+				39
+			],
+			"sectionOffset": [
+				0,
+				39
+			],
+			"text": [
+				"AFP",
+				0,
+				3
+			],
+			"sectionOid": "SIMPLE_SEGMENT",
+			"attributes": {
+				"polarity": "positive",
+				"generic": "false",
+				"conditional": "false",
+				"modality": "N/A",
+				"uncertainty": "false",
+				"labValue": [
+					"30",
+					31,
+					33
+				],
+				"labValueUnit": [
+					"ng/ml",
+					34,
+					39
+				]
+			},
+			"aspect": null,
+			"name": null,
+			"umlsConcept": [
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Alpha one fetoprotein measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0002210",
+					"preferredText": "alpha Fetoprotein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0002210",
+					"preferredText": "alpha Foetoprotein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0002210",
+					"preferredText": "alpha Fetoprotein (substance)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Alpha-fetoprotein NOS"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Alpha Fetoprotein measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "AFP measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Alpha-1-Fetoprotein measurement (procedure)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "AFP"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Alpha-fetoprotein NOS (procedure)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Alpha 1 fetoprotein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Alpha Fetoprotein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0002210",
+					"preferredText": "alpha Fetoproteins"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Alpha Foetoprotein measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0002210",
+					"preferredText": "Alpha-Fetoglobulin"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Test;alpha fetoprotein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0002210",
+					"preferredText": "alpha-Fetoproteins"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Alphafoetoprotein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0002210",
+					"preferredText": "AFP"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0002210",
+					"preferredText": "Fetuin (substance)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Alpha-fetoprotein Measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Alpha-1-Fetoprotein Measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Alpha-fetoprotein (AFP)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0002210",
+					"preferredText": "alpha-Fetoproteins [Chemical/Ingredient]"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0002210",
+					"preferredText": "fetuin"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0002210",
+					"preferredText": "Alpha Fetal Protein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "alpha fetoprotein test"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0002210",
+					"preferredText": "alpha-Fetoprotein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0002210",
+					"preferredText": "Alpha-1-Fetoprotein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Alphafetoprotein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Alpha 1 foetoprotein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0002210",
+					"preferredText": "AFP - Alpha-fetoprotein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "Alpha-1-Foetoprotein measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0201539",
+					"preferredText": "AFP Alphafoetoprotein"
+				}
+			]
+		},
+		{
+			"id": null,
+			"sentence": [
+				0,
+				39
+			],
+			"sectionOffset": [
+				0,
+				39
+			],
+			"text": [
+				"protein",
+				16,
+				23
+			],
+			"sectionOid": "SIMPLE_SEGMENT",
+			"attributes": {
+				"polarity": "positive",
+				"generic": "false",
+				"conditional": "false",
+				"modality": "N/A",
+				"uncertainty": "false",
+				"labValue": [],
+				"labValueUnit": []
+			},
+			"aspect": null,
+			"name": null,
+			"umlsConcept": [
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0555903",
+					"preferredText": "TPr - Total protein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0555903",
+					"preferredText": "Total protein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0555903",
+					"preferredText": "Total protein measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0555903",
+					"preferredText": "Measurement of total protein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0555903",
+					"preferredText": "PROT"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0555903",
+					"preferredText": "Total Protein Measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0555903",
+					"preferredText": "Protein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0555903",
+					"preferredText": "Total protein measurement (procedure)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0555903",
+					"preferredText": "TP - Total protein"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0555903",
+					"preferredText": "Protein total"
+				}
+			]
+		}
+	]
+}

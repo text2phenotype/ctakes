@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<lookupSpecification>
+    <dictionaries>
+        <dictionary>
+            <name>LabValuesGeneralDictionary</name>
+            <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.helpers.DictionaryWrapper</implementationName>
+
+            <properties>
+                <property key="dictionaryImplementation" value="org.apache.ctakes.dictionary.lookup2.dictionary.JdbcRareWordDictionary"/>
+                <property key="jdbcDriver" value="org.hsqldb.jdbcDriver"/>
+                <property key="jdbcUrl" value="jdbc:hsqldb:file:com/text2phenotype/ctakes/resources/dictionaries/general/general"/>
+                <property key="jdbcUser" value="sa"/>
+                <property key="jdbcPass" value=""/>
+                <property key="rareWordTable" value="cui_terms"/>
+            </properties>
+        </dictionary>
+    </dictionaries>
+
+    <conceptFactories>
+        <conceptFactory>
+            <name>LabValuesGeneralConcepts</name>
+            <implementationName>org.apache.ctakes.dictionary.lookup2.concept.JdbcConceptFactory</implementationName>
+            <properties>
+                <property key="jdbcDriver" value="org.hsqldb.jdbcDriver"/>
+                <property key="jdbcUrl" value="jdbc:hsqldb:file:com/text2phenotype/ctakes/resources/dictionaries/general/general"/>
+                <property key="jdbcUser" value="sa"/>
+                <property key="jdbcPass" value=""/>
+                <property key="tuiTable" value="tui"/>
+                <property key="prefTermTable" value="prefTerm"/>
+                <property key="lncTable" value="text"/>
+                <property key="mthTable" value="text"/>
+                <property key="mshTable" value="text"/>
+                <property key="nciTable" value="text"/>
+                <property key="cptTable" value="text"/>
+                <property key="rxnormTable" value="long"/>
+                <property key="icd9cmTable" value="text"/>
+                <property key="ndfrtTable" value="text"/>
+                <property key="snomedct_usTable" value="long"/>
+                <property key="icd10Table" value="text"/>
+                <property key="mthicd9Table" value="text"/>
+            </properties>
+        </conceptFactory>
+
+    </conceptFactories>
+
+    <dictionaryConceptPairs>
+        <dictionaryConceptPair>
+            <name>LabAnnotatorPair</name>
+            <dictionaryName>LabValuesGeneralDictionary</dictionaryName>
+            <conceptFactoryName>LabValuesGeneralConcepts</conceptFactoryName>
+        </dictionaryConceptPair>
+    </dictionaryConceptPairs>
+
+    <rareWordConsumer>
+        <name>General Consumer</name>
+        <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.consumers.AnnotationClassConsumer</implementationName>
+        <properties>
+            <property key="annotationClass" value="org.apache.ctakes.typesystem.type.textsem.LabMention"/>
+        </properties>
+    </rareWordConsumer>
+
+</lookupSpecification>

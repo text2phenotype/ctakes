@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:config="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <config:property-placeholder location="classpath:application.properties"/>
+
+    <bean class="com.text2phenotype.ctakes.rest.healthcheck.HealthCheckState" scope="singleton"/>
+
+    <import resource="abstract.xml"/>
+    <import resource="configs/loinc-config.xml"/>
+    <import resource="configs/problem-config.xml"/>
+    <import resource="configs/rxnorm-config.xml"/>
+    <import resource="configs/snomedct-config.xml"/>
+    <import resource="configs/hepc-config.xml"/>
+    <import resource="configs/general-config.xml"/>
+    <!-- <import resource="configs/cvx-config.xml"/> -->
+    <!--<import resource="configs/ndfrt-config.xml"/>-->
+    <!--<import resource="configs/hcc-config.xml"/>-->
+    <!-- <import resource="configs/shrine-config.xml"/> -->
+    <import resource="configs/medgen-config.xml"/>
+    <import resource="configs/original-config.xml"/>
+    <import resource="configs/icd9-config.xml"/>
+    <import resource="configs/icd10-config.xml"/>
+    <!-- <import resource="configs/healthcare-config.xml"/> -->
+    <!-- <import resource="configs/lab-common-config.xml"/> -->
+    <!-- <import resource="configs/lab-master-config.xml"/> -->
+    <import resource="configs/icd-config.xml"/>
+    <import resource="configs/cancer-topography-config.xml"/>
+    <import resource="configs/cancer-morphology-config.xml"/>
+    <import resource="configs/sectionizer-config.xml"/>
+    <import resource="configs/loinc-section-config.xml"/>
+    <import resource="configs/loinc-title-config.xml"/>
+    <import resource="configs/covid-config.xml"/>
+    <import resource="configs/gene-config.xml"/>
+
+</beans>

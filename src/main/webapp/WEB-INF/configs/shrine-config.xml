@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--Options-->
+    <bean id="shrine_icd9_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/shrine/icd9.xml"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="shrine_icd10_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/shrine/icd10.xml"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="shrine_loinc_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/shrine/loinc.xml"/>
+                <entry key="maxTokenDistance" value="${maxTokenDistance}"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="shrine_ndfrt_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/shrine/ndfrt.xml"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="shrine_rxnorm_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/shrine/rxnorm.xml"/>
+            </map>
+        </property>
+    </bean>
+
+    <!--Controllers-->
+    <!--icd9-->
+    <bean id="shrine_icd9_default_clinical" parent="default_clinical" lazy-init="true">
+        <property name="dict" value="shrine-icd9"/>
+        <property name="cli_options" ref="shrine_icd9_cliOptionals"/>
+    </bean>
+
+    <!--icd10-->
+    <bean id="shrine_icd10_default_clinical" parent="default_clinical" lazy-init="true">
+        <property name="dict" value="shrine-icd10"/>
+        <property name="cli_options" ref="shrine_icd10_cliOptionals"/>
+    </bean>
+
+    <!--loinc-->
+
+    <bean id="shrine_loinc_lab_value" parent="lab_value" lazy-init="true">
+        <property name="dict" value="shrine-loinc"/>
+        <property name="cli_options" ref="shrine_loinc_cliOptionals"/>
+    </bean>
+
+    <!--rxnorm-->
+
+    <bean id="shrine_rxnorm_drug_ner" parent="drug_ner" lazy-init="true">
+        <property name="dict" value="shrine-rxnorm"/>
+        <property name="cli_options" ref="shrine_rxnorm_cliOptionals"/>
+    </bean>
+
+</beans>

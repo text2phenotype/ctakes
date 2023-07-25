@@ -1,0 +1,69 @@
+---
+stages:
+  - suite-runner
+  - docker-push
+
+default:
+  image: docker.text2phenotype.com/nlp-gitlab-builder:latest
+
+  tags:
+    - nlp
+
+variables:
+  KUBERNETES_SERVICE_ACCOUNT_OVERWRITE: nlp-builder
+  DOCKER_HOST: tcp://dind:2375
+  DOCKER_TLS_CERTDIR: ""
+  GIT_STRATEGY: clone
+  GIT_SUBMODULE_STRATEGY: recursive
+  DOCKER_TARGET_ORG: "docker.text2phenotype.com"
+  DOCKER_REPO: "docker.text2phenotype.com"
+  DOCKER_GIT_REPO: "$CI_REPOSITORY_URL"
+  DOCKER_TAG: "$CI_COMMIT_REF_NAME\_$CI_COMMIT_SHORT_SHA\_$CI_JOB_TIMESTAMP"
+  IMAGE_NAME: "$CI_PROJECT_NAME"
+  DOCKER_NORMAL_BUILD: "true"
+
+.build-image-template: &build-image-template
+  stage: suite-runner
+  script:
+    - docker login "$DOCKER_REPO" -u "$DOCKER_REPO_USER" -p "$DOCKER_REPO_PASSWORD"
+    - cd $CI_PROJECT_DIR
+    - time git lfs fetch --all
+    - cd $CI_PROJECT_DIR
+    - ./bin/run-docker-build.sh
+
+build-image:
+  <<: *build-image-template
+  before_script:
+    - export DOCKER_SKIP_DEPLOY="true"
+  artifacts:
+    paths:
+    - .docker.metadata
+    expire_in: 1 day
+  only:
+    - merge_requests
+    - web
+
+build-merged-image:
+  <<: *build-image-template
+  only:
+    - dev
+    - master
+
+unit-test:
+  stage: suite-runner
+  image: docker.text2phenotype.com/jenkins-image:latest
+  script:
+    - cd $CI_PROJECT_DIR
+    - ./bin/local-test-unit.sh
+  only:
+    - merge_requests
+
+push-image:
+  stage: docker-push
+  script:
+    - docker login "$DOCKER_REPO" -u "$DOCKER_REPO_USER" -p "$DOCKER_REPO_PASSWORD"
+    - cat .docker.metadata
+    - ./build-tools/bin/stage.push
+  only:
+    - merge_requests
+    - web

@@ -1,0 +1,26 @@
+package com.text2phenotype.ctakes.rest.api.pipeline.helpers
+package com.text2phenotype.ctakes.rest.api.pipeline.ae
+
+load com/text2phenotype/ctakes/resources/config.piper
+
+add CCDASectionAnnotator
+
+load com/text2phenotype/ctakes/resources/pipelineParts/Core.piper
+load com/text2phenotype/ctakes/resources/pipelineParts/POSTagger.piper
+load com/text2phenotype/ctakes/resources/pipelineParts/Chunker.piper
+load com/text2phenotype/ctakes/resources/pipelineParts/LVG.piper
+load com/text2phenotype/ctakes/resources/pipelineParts/DictionaryLookup.piper
+load com/text2phenotype/ctakes/resources/pipelineParts/DependencyParser.piper
+load com/text2phenotype/ctakes/resources/pipelineParts/Assertion.piper
+
+add CopyAnnotator srcObjClass=org.apache.ctakes.typesystem.type.syntax.NP destObjClass=org.apache.ctakes.typesystem.type.textspan.LookupWindowAnnotation dataBindMap=getBegin|setBegin,getEnd|setEnd
+
+add org.apache.ctakes.drugner.ae.CopyDrugAnnotator srcDrugObjClass=org.apache.ctakes.typesystem.type.syntax.NP  destDrugObjClass=org.apache.ctakes.typesystem.type.textspan.DrugLookupWindowAnnotation dataDrugBindMap=getBegin|setBegin,getEnd|setEnd sectionOverrideSet=getBegin|setBegin,getEnd|setEnd
+
+addDescription Text2phenotypeDictionaryLookupAnnotator
+
+//add org.apache.ctakes.drugner.ae.DrugMentionAnnotator medicationRelatedSection=20101,20102,20103,20104,20105,20106,20107,20108,20109,20110,20111,20112,20113,20114,20115,20116,20117,20118,20119,20120,20121,20122,20123,20124,20125,20126,20127,20128,20129,20130,20110,20133,20147,SIMPLE_SEGMENT DISTANCE="1" DISTANCE_ANN_TYPE=org.apache.ctakes.typesystem.type.textspan.Sentence STATUS_BOUNDARY_ANN_TYPE=org.apache.ctakes.typesystem.type.textspan.Sentence
+add com.text2phenotype.ctakes.rest.api.pipeline.ae.DrugMentionAnnotatorWithPositions medicationRelatedSection=20101,20102,20103,20104,20105,20106,20107,20108,20109,20110,20111,20112,20113,20114,20115,20116,20117,20118,20119,20120,20121,20122,20123,20124,20125,20126,20127,20128,20129,20130,20110,20133,20147,SIMPLE_SEGMENT DISTANCE="1" DISTANCE_ANN_TYPE=org.apache.ctakes.typesystem.type.textspan.Sentence STATUS_BOUNDARY_ANN_TYPE=org.apache.ctakes.typesystem.type.textspan.Sentence
+
+addLogged org.apache.ctakes.necontexts.ContextAnnotator MaxLeftScopeSize=10 MaxRightScopeSize=10 ScopeOrder="LEFT,RIGHT" ContextHitConsumerClass=org.apache.ctakes.necontexts.status.StatusContextHitConsumer WindowAnnotationClass=org.apache.ctakes.typesystem.type.textspan.Sentence FocusAnnotationClass=org.apache.ctakes.typesystem.type.textsem.IdentifiedAnnotation ContextAnnotationClass=org.apache.ctakes.typesystem.type.syntax.BaseToken ContextAnalyzerClass=org.apache.ctakes.necontexts.status.StatusContextAnalyzer
+addLogged org.apache.ctakes.necontexts.ContextAnnotator MaxLeftScopeSize=7 MaxRightScopeSize=7 ScopeOrder="LEFT,RIGHT" ContextHitConsumerClass=org.apache.ctakes.necontexts.negation.NegationContextHitConsumer WindowAnnotationClass=org.apache.ctakes.typesystem.type.textspan.Sentence FocusAnnotationClass=org.apache.ctakes.typesystem.type.textsem.IdentifiedAnnotation ContextAnnotationClass=org.apache.ctakes.typesystem.type.syntax.BaseToken ContextAnalyzerClass=org.apache.ctakes.necontexts.negation.NegationContextAnalyzer

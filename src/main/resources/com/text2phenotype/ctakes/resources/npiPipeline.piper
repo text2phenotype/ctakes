@@ -1,0 +1,19 @@
+package com.text2phenotype.ctakes.rest.api.pipeline.helpers
+package com.text2phenotype.ctakes.rest.api.pipeline.ae
+
+load com/text2phenotype/ctakes/resources/config.piper
+
+add SimpleSegmentAnnotator
+
+//load com/text2phenotype/ctakes/resources/pipelineParts/Core.piper
+add SentenceDetectorAnnotatorBIO classifierJarPath=/org/apache/ctakes/core/sentdetect/model.jar FeatureConfiguration=CHAR
+add org.apache.ctakes.core.ae.TokenizerAnnotatorPTB
+add com.text2phenotype.ctakes.rest.api.pipeline.ae.DocumentIdGenerator
+
+load com/text2phenotype/ctakes/resources/pipelineParts/POSTagger.piper
+// load com/text2phenotype/ctakes/resources/pipelineParts/LVG.piper
+
+add AddressLemmatizer
+addLogged PhonesAnnotator
+addLogged NPIAnnotator dict=com/text2phenotype/ctakes/resources/dictionaries/npi/npi
+

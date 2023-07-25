@@ -1,0 +1,8 @@
+package com.text2phenotype.ctakes.rest.api.pipeline.ae
+package com.text2phenotype.ctakes.rest.api.pipeline.helpers
+
+load com/text2phenotype/ctakes/resources/defaultPipeline_ccda.piper
+
+add SentenceAdjuster UseSegments=False SegmentsToSkip=1,2 WordsToIgnore=1,2 WordsInPattern=no,none,never,quit,smoked,:
+
+add Text2phenotypeClassifiableEntries SectionsToIgnore=20109,20138 AllowedClassifications=SMOKER,CURRENT_SMOKER,NON_SMOKER,PAST_SMOKER,UNKNOWN UimaDescriptorStep1Key=com/text2phenotype/ctakes/resources/smoking_status/ProductionPostSentenceAggregate_step1.piper UimaDescriptorStep2Key=com/text2phenotype/ctakes/resources/smoking_status/ProductionPostSentenceAggregate_step2_libsvm.piper

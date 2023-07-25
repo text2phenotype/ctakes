@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--Options-->
+    <bean id="icd_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/icd.xml"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="icd_syn_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/icd-syn.xml"/>
+            </map>
+        </property>
+    </bean>
+
+    <!--Controllers-->
+
+    <!-- <bean id="icd_default_clinical" parent="default_clinical" lazy-init="true">
+        <property name="dict" value="icd"/>
+        <property name="cli_options" ref="icd_cliOptionals"/>
+    </bean> -->
+
+    <bean id="icd_syn_default_clinical" parent="default_clinical" lazy-init="true">
+        <property name="dict" value="icd-syn"/>
+        <property name="cli_options" ref="icd_syn_cliOptionals"/>
+    </bean>
+
+</beans>

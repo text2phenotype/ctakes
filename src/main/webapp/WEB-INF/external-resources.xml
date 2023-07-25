@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--<util:list id="externalResources">-->
+        <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.ExternalResource">
+            <property name="name" value="negationContradictionWordsKey"/>
+            <property name="path" value="org/apache/ctakes/smokingstatus/data/context/negationContradictionWords.txt"/>
+            <!--<property name="bindTo" value="com.text2phenotype.ctakes.rest.api.pipeline.ae.Text2phenotypeClassifiableEntries"/>-->
+            <property name="bindTo" value=""/>
+        </bean>
+        <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.ExternalResource">
+            <property name="name" value="PathOfModel"/>
+            <property name="path" value="org/apache/ctakes/smokingstatus/data/PCS/pcs_libsvm-2.91.model"/>
+            <property name="bindTo" value="org.apache.ctakes.smokingstatus.ae.PcsClassifierAnnotator_libsvm"/>
+        </bean>
+        <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.ExternalResource">
+            <property name="name" value="StopWordsFile"/>
+            <property name="path" value="org/apache/ctakes/smokingstatus/data/PCS/stopwords_PCS.txt"/>
+            <property name="bindTo" value="org.apache.ctakes.smokingstatus.ae.PcsClassifierAnnotator_libsvm"/>
+        </bean>
+        <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.ExternalResource">
+            <property name="name" value="PCSKeyWordFile"/>
+            <property name="path" value="org/apache/ctakes/smokingstatus/data/PCS/keywords_PCS.txt"/>
+            <property name="bindTo" value="org.apache.ctakes.smokingstatus.ae.PcsClassifierAnnotator_libsvm"/>
+        </bean>
+        <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.ExternalResource">
+            <property name="name" value="LookupDescriptor"/>
+            <property name="path" value="org/apache/ctakes/smokingstatus/data/SmokingStatusLookupConfig.xml"/>
+            <property name="bindTo" value="org.apache.ctakes.dictionary.lookup.ae.DictionaryLookupAnnotator"/>
+        </bean>
+        <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.ExternalResource">
+            <property name="name" value="SmokerDictionary"/>
+            <property name="path" value="org/apache/ctakes/smokingstatus/data/smoker.dictionary"/>
+            <property name="bindTo" value="org.apache.ctakes.dictionary.lookup.ae.DictionaryLookupAnnotator"/>
+        </bean>
+        <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.ExternalResource">
+            <property name="name" value="NonSmokerDictionary"/>
+            <property name="path" value="org/apache/ctakes/smokingstatus/data/nonsmoker.dictionary"/>
+            <property name="bindTo" value="org.apache.ctakes.dictionary.lookup.ae.DictionaryLookupAnnotator"/>
+        </bean>
+        <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.ExternalResource">
+            <property name="name" value="LvgCmdApi"/>
+            <property name="path" value="org/apache/ctakes/lvg/data/config/lvg.properties"/>
+            <property name="bindTo" value="org.apache.ctakes.lvg.ae.LvgAnnotator"/>
+            <property name="resourceClass" value="org.apache.ctakes.lvg.resource.LvgCmdApiResourceImpl"/>
+        </bean>
+        <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.ExternalResource">
+            <property name="name" value="LvgCmdApi"/>
+            <property name="path" value="org/apache/ctakes/lvg/data/config/lvg.properties"/>
+            <property name="bindTo" value="com.text2phenotype.ctakes.rest.api.pipeline.helpers.CachedComponent"/>
+            <property name="resourceClass" value="org.apache.ctakes.lvg.resource.LvgCmdApiResourceImpl"/>
+        </bean>
+    <!--</util:list>-->
+</beans>

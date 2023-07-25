@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lookupSpecification>
+    <dictionaries>
+        <dictionary><name>test_dict</name><implementationName>com.text2phenotype.ctakes.rest.api.pipeline.dictionary.BsvRareWordDictionaryWithSAB</implementationName><properties><property key="bsvPath" value="BIOMED_1265/dict.bsv"/></properties></dictionary>
+    </dictionaries>
+    <conceptFactories>
+        <conceptFactory><name>test_concepts</name><implementationName>com.text2phenotype.ctakes.rest.api.pipeline.concept.BsvConceptFactoryWithSAB</implementationName><properties><property key="bsvPath" value="BIOMED_1265/dict.bsv"/></properties></conceptFactory>
+    </conceptFactories>
+    <dictionaryConceptPairs>
+        <dictionaryConceptPair><name>test_pair</name><dictionaryName>test_dict</dictionaryName><conceptFactoryName>test_concepts</conceptFactoryName></dictionaryConceptPair>
+    </dictionaryConceptPairs>
+    <rareWordConsumer>
+        <name>test Consumer</name>
+        <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.consumers.FilteredDefaultTermConsumer</implementationName>
+        <properties>
+            <property key="codingScheme" value="test"/>
+            <property key="precisionMode" value="true"/>
+        </properties>
+    </rareWordConsumer>
+</lookupSpecification>

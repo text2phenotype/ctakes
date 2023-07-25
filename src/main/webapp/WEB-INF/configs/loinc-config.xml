@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--Options-->
+    <bean id="loinc_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/loinc.xml"/>
+                <entry key="maxTokenDistance" value="${maxTokenDistance}"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="loinc_common_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/loinc-common.xml"/>
+                <entry key="maxTokenDistance" value="${maxTokenDistance}"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="loinc2hpo_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/loinc2hpo.xml"/>
+                <entry key="maxTokenDistance" value="${maxTokenDistance}"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="loinc2hpo_pheno_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/loinc2hpo-pheno.xml"/>
+                <entry key="maxTokenDistance" value="${maxTokenDistance}"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="loinc_mimic_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/loinc-mimic.xml"/>
+                <entry key="maxTokenDistance" value="${maxTokenDistance}"/>
+            </map>
+        </property>
+    </bean>
+
+    <!--Controllers-->
+
+    <bean id="loinc_lab_value" parent="lab_value" lazy-init="true">
+        <property name="dict" value="loinc"/>
+        <property name="cli_options" ref="loinc_cliOptionals"/>
+    </bean>
+
+    <!-- <bean id="loinc_common_lab_value" parent="lab_value" lazy-init="true">
+        <property name="dict" value="loinc-common"/>
+        <property name="cli_options" ref="loinc_common_cliOptionals"/>
+    </bean> -->
+
+    <!-- <bean id="loinc2hpo_lab_value" parent="lab_value" lazy-init="true">
+        <property name="dict" value="loinc2hpo"/>
+        <property name="cli_options" ref="loinc2hpo_cliOptionals"/>
+    </bean> -->
+
+    <!-- <bean id="loinc2hpo_phen_lab_value" parent="default_clinical" lazy-init="true">
+        <property name="dict" value="loinc2hpo"/>
+        <property name="cli_options" ref="loinc2hpo_pheno_cliOptionals"/>
+    </bean> -->
+
+    <!-- <bean id="loinc_mimic_lab_value" parent="lab_value" lazy-init="true">
+        <property name="dict" value="loinc-mimic"/>
+        <property name="cli_options" ref="loinc_mimic_cliOptionals"/>
+    </bean> -->
+</beans>

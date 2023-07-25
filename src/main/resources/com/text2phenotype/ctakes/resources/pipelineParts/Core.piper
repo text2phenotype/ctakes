@@ -1,0 +1,9 @@
+
+//add com.text2phenotype.ctakes.rest.api.pipeline.ae.SentenceDetectorWithCorrection SentenceModelFile=com/text2phenotype/ctakes/resources/sentdetect/en-sent.bin
+//addLogged SentenceDetectorAnnotatorBIO classifierJarPath=/org/apache/ctakes/core/sentdetect/model.jar FeatureConfiguration=CHAR
+addLogged com.text2phenotype.ctakes.rest.api.pipeline.ae.FastSentenceDetectorAnnotatorBIO classifierJarPath=/org/apache/ctakes/core/sentdetect/model.jar FeatureConfiguration=CHAR
+add com.text2phenotype.ctakes.rest.api.pipeline.ae.TokenizerAnnotatorPTB
+
+// add com.text2phenotype.ctakes.rest.api.pipeline.ae.DocumentIdGenerator
+add com.text2phenotype.ctakes.rest.api.pipeline.ae.ContextDependentTokenizerAnnotator
+add com.text2phenotype.ctakes.rest.api.pipeline.ae.PatientDataExtractor

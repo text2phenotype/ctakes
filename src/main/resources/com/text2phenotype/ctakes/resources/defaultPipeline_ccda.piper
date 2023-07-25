@@ -1,0 +1,19 @@
+package com.text2phenotype.ctakes.rest.api.pipeline.helpers
+package org.apache.ctakes.assertion.medfacts.cleartk
+package org.apache.ctakes.preprocessor.ae
+package com.text2phenotype.ctakes.rest.api.pipeline.ae
+package org.apache.ctakes.core.ae
+
+load com/text2phenotype/ctakes/resources/config.piper
+
+add CCDASectionAnnotator
+
+load com/text2phenotype/ctakes/resources/pipelineParts/Core.piper
+load com/text2phenotype/ctakes/resources/pipelineParts/POSTagger.piper
+//load com/text2phenotype/ctakes/resources/pipelineParts/Chunker.piper
+load com/text2phenotype/ctakes/resources/pipelineParts/LVG.piper
+load com/text2phenotype/ctakes/resources/pipelineParts/DictionaryLookup.piper
+load com/text2phenotype/ctakes/resources/pipelineParts/DependencyParser.piper
+load com/text2phenotype/ctakes/resources/pipelineParts/Assertion.piper
+
+//add CachedComponent for=org.apache.ctakes.constituency.parser.ae.ConstituencyParser MODEL_FILENAME=org/apache/ctakes/constituency/parser/models/sharpacq-3.1.bin

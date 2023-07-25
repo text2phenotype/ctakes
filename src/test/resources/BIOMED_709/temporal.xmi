@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:util="http:///org/apache/ctakes/typesystem/type/util.ecore" xmlns:tcas="http:///uima/tcas.ecore"
+         xmlns:xmi="http://www.omg.org/XMI" xmlns:cas="http:///uima/cas.ecore"
+         xmlns:type10="http:///org/cleartk/syntax/constituent/type.ecore" xmlns:ne="http:///org/cleartk/type/ne.ecore"
+         xmlns:textsem="http:///org/apache/ctakes/typesystem/type/textsem.ecore"
+         xmlns:type6="http:///org/apache/ctakes/smokingstatus/i2b2/type.ecore"
+         xmlns:refsem="http:///org/apache/ctakes/typesystem/type/refsem.ecore"
+         xmlns:type11="http:///org/cleartk/syntax/dependency/type.ecore"
+         xmlns:type="http:///de/tudarmstadt/ukp/dkpro/core/api/metadata/type.ecore"
+         xmlns:type14="http:///org/cleartk/util/type.ecore"
+         xmlns:assertion="http:///org/apache/ctakes/typesystem/type/temporary/assertion.ecore"
+         xmlns:type8="http:///org/cleartk/score/type.ecore"
+         xmlns:syntax="http:///org/apache/ctakes/typesystem/type/syntax.ecore"
+         xmlns:type9="http:///org/cleartk/srl/type.ecore"
+         xmlns:type2="http:///org/apache/ctakes/constituency/parser/uima/type.ecore"
+         xmlns:annotations="http:///com/text2phenotype/ctakes/rest/api/pipeline/annotations.ecore"
+         xmlns:types="http:///org/apache/ctakes/assertion/medfacts/types.ecore"
+         xmlns:type7="http:///org/apache/ctakes/smokingstatus/type.ecore"
+         xmlns:relation="http:///org/apache/ctakes/typesystem/type/relation.ecore"
+         xmlns:type12="http:///org/cleartk/timeml/type.ecore"
+         xmlns:type5="http:///org/apache/ctakes/sideeffect/type.ecore"
+         xmlns:token="http:///com/text2phenotype/ctakes/rest/api/pipeline/annotations/token.ecore"
+         xmlns:type15="http:///org/cleartk/ne/type.ecore" xmlns:type13="http:///org/cleartk/token/type.ecore"
+         xmlns:structured="http:///org/apache/ctakes/typesystem/type/structured.ecore"
+         xmlns:textspan="http:///org/apache/ctakes/typesystem/type/textspan.ecore"
+         xmlns:libsvm="http:///org/apache/ctakes/smokingstatus/type/libsvm.ecore"
+         xmlns:type3="http:///org/apache/ctakes/coreference/type.ecore"
+         xmlns:type4="http:///org/apache/ctakes/drugner/type.ecore" xmi:version="2.0">
+    <cas:NULL xmi:id="0"/>
+    <tcas:DocumentAnnotation xmi:id="8" sofa="1" begin="0" end="31" language="x-unspecified"/>
+    <textspan:Segment xmi:id="13" sofa="1" begin="0" end="31" id="SIMPLE_SEGMENT"/>
+    <textspan:Sentence xmi:id="19" sofa="1" begin="0" end="31" sentenceNumber="0"/>
+    <syntax:NumToken xmi:id="25" sofa="1" begin="0" end="2" tokenNumber="0" partOfSpeech="CD" numType="1"/>
+    <syntax:NumToken xmi:id="42" sofa="1" begin="3" end="5" tokenNumber="2" partOfSpeech="CD" numType="1"/>
+    <syntax:NumToken xmi:id="59" sofa="1" begin="6" end="10" tokenNumber="4" partOfSpeech="CD" numType="1"/>
+    <syntax:NumToken xmi:id="68" sofa="1" begin="11" end="13" tokenNumber="5" partOfSpeech="CD" numType="1"/>
+    <syntax:NumToken xmi:id="85" sofa="1" begin="14" end="16" tokenNumber="7" partOfSpeech="CD" numType="1"/>
+    <syntax:NumToken xmi:id="106" sofa="1" begin="28" end="31" tokenNumber="9" partOfSpeech="CD" numType="2"/>
+    <syntax:PunctuationToken xmi:id="34" sofa="1" begin="2" end="3" tokenNumber="1" partOfSpeech="SYM"/>
+    <syntax:PunctuationToken xmi:id="51" sofa="1" begin="5" end="6" tokenNumber="3" partOfSpeech="HYPH"/>
+    <syntax:PunctuationToken xmi:id="77" sofa="1" begin="13" end="14" tokenNumber="6" partOfSpeech=":"/>
+    <syntax:WordToken xmi:id="94" sofa="1" begin="17" end="27" tokenNumber="8" normalizedForm="hemoglobin"
+                      partOfSpeech="NN" capitalization="0" numPosition="0" canonicalForm="hemoglobin"/>
+    <structured:DocumentID xmi:id="115" documentID="37a4a4bc-951e-44fa-9533-15e1981893d3"/>
+    <textsem:DateAnnotation xmi:id="117" sofa="1" begin="0" end="10" id="0" typeID="0" discoveryTechnique="0"
+                            confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false"
+                            historyOf="0"/>
+    <textsem:FractionAnnotation xmi:id="153" sofa="1" begin="0" end="5" id="0" typeID="0" discoveryTechnique="0"
+                                confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false"
+                                historyOf="0"/>
+    <textsem:FractionAnnotation xmi:id="135" sofa="1" begin="28" end="31" id="0" typeID="0" discoveryTechnique="0"
+                                confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false"
+                                historyOf="0"/>
+    <textsem:TimeMention xmi:id="180" sofa="1" begin="0" end="10" id="0" typeID="0" discoveryTechnique="0"
+                         confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"
+                         timeClass="DATE"/>
+    <textsem:LabMention xmi:id="214" sofa="1" begin="17" end="27" id="0" ontologyConceptArr="201" typeID="9"
+                        discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false"
+                        generic="false" historyOf="0"/>
+    <cas:Sofa xmi:id="1" sofaNum="1" sofaID="_InitialView" mimeType="text"
+              sofaString="02/22/2013 10:39 hemoglobin 7.6"/>
+    <refsem:UmlsConcept xmi:id="201" codingScheme="CUSTOM" code="6" score="0.0" disambiguated="false" cui="C000006"
+                        tui="T034" preferredText="Hemoglobin"/>
+    <cas:View sofa="1" members="8 13 19 25 42 59 68 85 106 34 51 77 94 115 117 153 135 180 214"/>
+</xmi:XMI>

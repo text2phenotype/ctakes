@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--Options-->
+    <bean id="lab_master_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/lab-master.xml"/>
+                <entry key="maxTokenDistance" value="${maxTokenDistance}"/>
+            </map>
+        </property>
+    </bean>
+
+    <!--Controllers-->
+
+    <bean id="lab_master_value" parent="lab_value" lazy-init="true">
+        <property name="dict" value="lab_master"/>
+        <property name="cli_options" ref="lab_master_cliOptionals"/>
+    </bean>
+</beans>

@@ -1,0 +1,2 @@
+*.script filter=lfs diff=lfs merge=lfs -text
+*.bsv filter=lfs diff=lfs merge=lfs -text

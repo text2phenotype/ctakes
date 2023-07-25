@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--models for last commit info injection-->
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.model.response.DefaultResponseModel" scope="request">
+        <property name="jira" value="${changes.jira:#{null}}"/>
+        <property name="user" value="${changes.user:#{null}}"/>
+        <property name="timestamp" value="${changes.date:#{null}}"/>
+        <property name="date" value="${changes.date:#{null}}"/>
+        <property name="version" value="${changes.version}"/>
+    </bean>
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.model.response.DrugResponseModel" scope="request">
+        <property name="jira" value="${changes.jira:#{null}}"/>
+        <property name="user" value="${changes.user:#{null}}"/>
+        <property name="timestamp" value="${changes.date:#{null}}"/>
+        <property name="date" value="${changes.date:#{null}}"/>
+        <property name="version" value="${changes.version}"/>
+    </bean>
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.model.response.LabResponseModel" scope="request">
+        <property name="jira" value="${changes.jira:#{null}}"/>
+        <property name="user" value="${changes.user:#{null}}"/>
+        <property name="timestamp" value="${changes.date:#{null}}"/>
+        <property name="date" value="${changes.date:#{null}}"/>
+        <property name="version" value="${changes.version}"/>
+    </bean>
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.model.response.POSTaggerResponseModel" scope="request">
+        <property name="jira" value="${changes.jira:#{null}}"/>
+        <property name="user" value="${changes.user:#{null}}"/>
+        <property name="timestamp" value="${changes.date:#{null}}"/>
+        <property name="date" value="${changes.date:#{null}}"/>
+        <property name="version" value="${changes.version}"/>
+    </bean>
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.model.response.SmokingResponseModel" scope="request">
+        <property name="jira" value="${changes.jira:#{null}}"/>
+        <property name="user" value="${changes.user:#{null}}"/>
+        <property name="timestamp" value="${changes.date:#{null}}"/>
+        <property name="date" value="${changes.date:#{null}}"/>
+        <property name="version" value="${changes.version}"/>
+    </bean>
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.model.response.TemporalResponseModel" scope="request">
+        <property name="jira" value="${changes.jira:#{null}}"/>
+        <property name="user" value="${changes.user:#{null}}"/>
+        <property name="timestamp" value="${changes.date:#{null}}"/>
+        <property name="date" value="${changes.date:#{null}}"/>
+        <property name="version" value="${changes.version}"/>
+    </bean>
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.model.response.NPIResponseModel" scope="request">
+        <property name="jira" value="${changes.jira:#{null}}"/>
+        <property name="user" value="${changes.user:#{null}}"/>
+        <property name="timestamp" value="${changes.date:#{null}}"/>
+        <property name="date" value="${changes.date:#{null}}"/>
+        <property name="version" value="${changes.version}"/>
+    </bean>
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.model.response.AddressesResponceModel" scope="request">
+        <property name="jira" value="${changes.jira:#{null}}"/>
+        <property name="user" value="${changes.user:#{null}}"/>
+        <property name="timestamp" value="${changes.date:#{null}}"/>
+        <property name="date" value="${changes.date:#{null}}"/>
+        <property name="version" value="${changes.version}"/>
+    </bean>
+
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.DefaultModelBuilder" scope="request"/>
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.DrugNERModelBuilder" scope="request"/>
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.SmokingStatusModelBuilder" scope="request"/>
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.LabValuesModelBuilder" scope="request"/>
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.TemporalModelBuilder" scope="request"/>
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.POSTaggerModelBuilder" scope="request"/>
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.NPIModelBuilder" scope="request"/>
+    <bean class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.AddressesModelBuilder" scope="request"/>
+
+    <!--Abstract pipelines-->
+
+    <!--Default clinical pipeline-->
+    <bean id="default_clinical" class="com.text2phenotype.ctakes.rest.api.pipeline.controllers.Pipeline" abstract="true">
+        <property name="name" value="default_clinical"/>
+        <property name="piper" value="com/text2phenotype/ctakes/resources/defaultPipeline.piper"/>
+        <property name="modelBuilder" value="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.DefaultModelBuilder"/>
+    </bean>
+
+    <!--Drug NER-->
+    <bean id="drug_ner" class="com.text2phenotype.ctakes.rest.api.pipeline.controllers.Pipeline" abstract="true">
+        <property name="name" value="drug_ner"/>
+        <property name="piper" value="com/text2phenotype/ctakes/resources/drugNERPipeline.piper"/>
+        <property name="modelBuilder" value="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.DrugNERModelBuilder"/>
+    </bean>
+
+    <!--Smoking status-->
+    <bean id="smoking_status" class="com.text2phenotype.ctakes.rest.api.pipeline.controllers.Pipeline" abstract="true">
+        <property name="name" value="smoking_status"/>
+        <property name="piper" value="com/text2phenotype/ctakes/resources/smokingStatusPipeline.piper"/>
+        <property name="modelBuilder" value="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.SmokingStatusModelBuilder"/>
+    </bean>
+
+    <!--Lab values-->
+    <bean id="lab_value" class="com.text2phenotype.ctakes.rest.api.pipeline.controllers.Pipeline" abstract="true">
+        <property name="name" value="lab_value"/>
+        <property name="piper" value="com/text2phenotype/ctakes/resources/labValuePipeline.piper"/>
+        <property name="modelBuilder" value="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.LabValuesModelBuilder"/>
+    </bean>
+
+    <!--Temporal module-->
+    <bean id="temporal_module" class="com.text2phenotype.ctakes.rest.api.pipeline.controllers.Pipeline" abstract="true">
+        <property name="name" value="temporal_module"/>
+        <property name="piper" value="com/text2phenotype/ctakes/resources/temporalModule.piper"/>
+        <property name="modelBuilder" value="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.TemporalModelBuilder"/>
+    </bean>
+
+    <!--POS tagger-->
+    <bean id="pos_tagger" class="com.text2phenotype.ctakes.rest.api.pipeline.controllers.Pipeline" abstract="true">
+        <property name="name" value="pos_tagger"/>
+        <property name="piper" value="com/text2phenotype/ctakes/resources/posTaggerPipeline.piper"/>
+        <property name="modelBuilder" value="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.POSTaggerModelBuilder"/>
+    </bean>
+
+    <!--NPI -->
+    <bean id="npi_recognition" class="com.text2phenotype.ctakes.rest.api.pipeline.controllers.Pipeline" abstract="true">
+        <property name="name" value="npi_recognition"/>
+        <property name="piper" value="com/text2phenotype/ctakes/resources/npiPipeline.piper"/>
+        <property name="modelBuilder" value="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.NPIModelBuilder"/>
+    </bean>
+
+    <!--Addresses -->
+    <bean id="address" class="com.text2phenotype.ctakes.rest.api.pipeline.controllers.Pipeline" abstract="true">
+        <property name="name" value="address"/>
+        <property name="piper" value="com/text2phenotype/ctakes/resources/addressesPipeline.piper"/>
+        <property name="modelBuilder" value="com.text2phenotype.ctakes.rest.api.pipeline.helpers.mb.AddressesModelBuilder"/>
+    </bean>
+</beans>

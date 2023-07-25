@@ -1,0 +1,1 @@
+Annotations: Drug, Disease, Finding, Procedure, Anatomical site, Lab, Activity

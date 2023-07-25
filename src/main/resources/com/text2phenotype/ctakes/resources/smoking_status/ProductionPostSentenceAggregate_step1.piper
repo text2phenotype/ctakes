@@ -1,0 +1,3 @@
+add SentenceDetector
+add TokenizerAnnotatorPTB
+add KuRuleBasedClassifierAnnotator SmokingWordsFile=org/apache/ctakes/smokingstatus/data/KU/keywords.txt classAttribute=smoking_status CaseSensitive=false UnknownWordsFile=org/apache/ctakes/smokingstatus/data/KU/unknown_words.txt

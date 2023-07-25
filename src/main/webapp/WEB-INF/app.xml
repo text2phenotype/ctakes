@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:config="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <config:component-scan base-package="com.text2phenotype.ctakes.rest.api.pipeline"/>
+    <config:property-placeholder location="classpath:application.properties" ignore-resource-not-found="true" ignore-unresolvable="true"/>
+
+    <mvc:annotation-driven>
+        <mvc:async-support default-timeout="30000" task-executor="taskExecutor"/>
+    </mvc:annotation-driven>
+
+    <task:annotation-driven scheduler="taskScheduler"/>
+    <task:scheduler id="taskScheduler" pool-size="42"/>
+
+    <!-- modify the parameters of thread pool -->
+    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <property name="corePoolSize" value="${corePoolSize}"/>
+        <property name="maxPoolSize" value="${maxPoolSize}"/>
+        <property name="queueCapacity" value="${queueCapacity}"/>
+        <property name="keepAliveSeconds" value="${keepAliveSeconds}"/>
+    </bean>
+
+    <import resource="external-resources.xml"/>
+
+    <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="jacksonMessageConverter"/>
+            </list>
+        </property>
+    </bean>
+    <import resource="async.xml"/>
+</beans>

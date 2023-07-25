@@ -1,0 +1,1047 @@
+{
+	"docId": "b7acefa4-2ffd-454a-9fc3-d27c6f59c345",
+	"genderDiscrepancy": null,
+	"dob": null,
+	"gender": null,
+	"age": null,
+	"labValues": [
+		{
+			"id": null,
+			"sentence": [
+				0,
+				28
+			],
+			"sectionOffset": [
+				0,
+				232
+			],
+			"text": [
+				"WBC",
+				0,
+				3
+			],
+			"sectionOid": "SIMPLE_SEGMENT",
+			"attributes": {
+				"polarity": "positive",
+				"generic": "false",
+				"conditional": "false",
+				"modality": "N/A",
+				"uncertainty": "false",
+				"labValue": [
+					"7.6",
+					7,
+					10
+				],
+				"labValueUnit": [
+					"K/uL",
+					11,
+					15
+				]
+			},
+			"aspect": null,
+			"name": null,
+			"umlsConcept": [
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "Leukocytes"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "WBC"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "White Cell"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "WBC - White blood cell count"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "Corpuscle, White Blood"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "White blood cell, NOS"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "Numbers, Leukocyte"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "Leukocytes"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "Leukocyte"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "Corpuscles, White Blood"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "White blood cell count (procedure)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "Blood Cells, White"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "Blood Corpuscles, White"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "White blood cell count NOS"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "Leucocytes"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "White Blood Cell Count"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "Leucocyte count"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "White blood cell count - observation"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "White Blood Corpuscles"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "WBC (white blood cell)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "White Blood Cells"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "leukocyte count (lab test)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "Leukocyte Numbers"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "Leukocyte Number"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "Leukocyte Count"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "Leukocyte (cell)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "Blood Cell, White"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "White cells"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "White blood cells"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "White Blood Cell"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "Whole Blood Leukocyte Counts"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "Leukocyte count NOS"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "Leukocyte Counts"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "Blood Cell Count, White"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "Counts, Leukocyte"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "Count, Leukocyte"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "White blood cell (cell)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "White Blood Cell Count procedure"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "WBC count"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "Leukocyte, NOS"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "WCC - White blood cell count"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "Reticuloendothelial System, Leukocytes"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "WBC - White blood cell"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "Number, Leukocyte"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "White Blood Corpuscle"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "Blood Corpuscle, White"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "WBC"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023516",
+					"preferredText": "Leucocyte"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0023508",
+					"preferredText": "White blood cell analysis"
+				}
+			]
+		},
+		{
+			"id": null,
+			"sentence": [
+				85,
+				147
+			],
+			"sectionOffset": [
+				0,
+				232
+			],
+			"text": [
+				"HCT",
+				85,
+				88
+			],
+			"sectionOid": "SIMPLE_SEGMENT",
+			"attributes": {
+				"polarity": "negative",
+				"generic": "false",
+				"conditional": "false",
+				"modality": "N/A",
+				"uncertainty": "false",
+				"labValue": [
+					"45",
+					92,
+					94
+				],
+				"labValueUnit": [
+					"%",
+					95,
+					96
+				]
+			},
+			"aspect": null,
+			"name": null,
+			"umlsConcept": [
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Measurement of hematocrit (Hct)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Hct - Haematocrit"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "red blood cell count"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Volumes, Packed Erythrocyte"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Packed cell volume"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Haematocrit"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Hematocrit - PCV - NOS (procedure)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Erythrocyte Volume, Packed"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Hematocrit procedure"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Whole Blood Hematocrit Test"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Blood count; hematocrit (Hct)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Haematocrit - PCV - NOS"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "hematocrit packed cell volume (lab test)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Haematocrit - PCV"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Hematocrit"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Packed Red Cell Volume"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Volumes, Packed Red-Cell"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "BLOOD COUNT HEMATOCRIT"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Packed Erythrocyte Volume"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Volume, Packed Erythrocyte"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Haematocrit (procedure)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Red-Cell Volume, Packed"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Packed cell volume measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Packed Red-Cell Volumes"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Red-Cell Volumes, Packed"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Haematocrit (observable entity)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Hematocrit - PCV - NOS"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Packed Red-Cell Volume"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "hematocrit (lab test)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Packed cell volume measurement (procedure)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Erythrocyte Volume Fraction"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "hematocrit packed cell volume"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Packed cell volume (observable entity)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Erythrocyte Volumes, Packed"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Hematocrits"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "EVF"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Hct - Hematocrit"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Volume, Packed Red-Cell"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Haematocrit determination"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "HCT"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Hct"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Hematocrit Measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Haematocrit - PCV - NOS (procedure)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "PCV"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Hematocrit - PCV"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Packed Erythrocyte Volumes"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Hematocrit determination"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0018935",
+					"preferredText": "Hematocrit determination (procedure)"
+				}
+			]
+		},
+		{
+			"id": null,
+			"sentence": [
+				153,
+				227
+			],
+			"sectionOffset": [
+				0,
+				232
+			],
+			"text": [
+				"HGB",
+				153,
+				156
+			],
+			"sectionOid": "SIMPLE_SEGMENT",
+			"attributes": {
+				"polarity": "negative",
+				"generic": "false",
+				"conditional": "false",
+				"modality": "N/A",
+				"uncertainty": "false",
+				"labValue": [
+					"14.2",
+					160,
+					164
+				],
+				"labValueUnit": [
+					"g/dL",
+					165,
+					169
+				]
+			},
+			"aspect": null,
+			"name": null,
+			"umlsConcept": [
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0019046",
+					"preferredText": "HGB - Hemoglobin"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "Haemoglobin determination"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "FHGB"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "Hemoglobin Measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "Haemoglobin"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "Hemoglobin determination (procedure)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "HGB"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0019046",
+					"preferredText": "Hemoglobin"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0019046",
+					"preferredText": "HGB - Haemoglobin"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "Hemoglobin determination, NOS"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "BLOOD COUNT HEMOGLOBIN"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "Test;hemoglobin"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0019046",
+					"preferredText": "Hemoglobin, NOS"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0019046",
+					"preferredText": "Hemoglobins"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "Blood count; hemoglobin (Hgb)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "Measurement of hemoglobin (Hgb)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "Test;haemoglobin"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0019046",
+					"preferredText": "Hemoglobins [Chemical/Ingredient]"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0019046",
+					"preferredText": "Hemoglobin (substance)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0019046",
+					"preferredText": "Haemoglobin"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "Haem"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "haemoglobin test"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "Hemoglobin level"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "hemoglobin measurement (lab test)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0019046",
+					"preferredText": "Hb - Haemoglobin"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "hemoglobin test"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0019046",
+					"preferredText": "Hgb"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "Free Hemoglobin"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0019046",
+					"preferredText": "Haemoglobin, NOS"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0019046",
+					"preferredText": "Hb - Hemoglobin"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "Haemoglobin determination, NOS"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0019046",
+					"preferredText": "Hb"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "Hemoglobin determination"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "Hemoglobin measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0518015",
+					"preferredText": "hemoglobin"
+				}
+			]
+		}
+	]
+}

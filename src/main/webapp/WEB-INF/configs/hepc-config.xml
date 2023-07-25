@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--Options-->
+    <bean id="hepc_cliOptionals" class="com.text2phenotype.ctakes.rest.api.pipeline.helpers.Text2phenotypeCliOptionals">
+        <property name="params">
+            <map>
+                <!--Dictionary path-->
+                <entry key="LookupXml" value="com/text2phenotype/ctakes/resources/dictionaries/hepc.xml"/>
+                <entry key="maxTokenDistance" value="${maxTokenDistance}"/>
+            </map>
+        </property>
+    </bean>
+
+    <!--Controllers-->
+
+    <bean id="hepc_default_clinical" parent="default_clinical" lazy-init="true">
+        <property name="dict" value="hepc"/>
+        <property name="cli_options" ref="hepc_cliOptionals"/>
+    </bean>
+
+    <bean id="hepc_drug_ner" parent="drug_ner" lazy-init="true">
+        <property name="dict" value="hepc"/>
+        <property name="cli_options" ref="hepc_cliOptionals"/>
+    </bean>
+
+    <bean id="hepc_lab_value" parent="lab_value" lazy-init="true">
+        <property name="dict" value="hepc"/>
+        <property name="cli_options" ref="hepc_cliOptionals"/>
+    </bean>
+
+    <!--<bean id="hepc_temporal_module" parent="temporal_module" lazy-init="true">-->
+        <!--<property name="dict" value="hepc"/>-->
+        <!--<property name="cli_options" ref="hepc_cliOptionals"/>-->
+    <!--</bean>-->
+
+</beans>

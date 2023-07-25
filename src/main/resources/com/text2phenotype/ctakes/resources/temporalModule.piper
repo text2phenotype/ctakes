@@ -1,0 +1,35 @@
+package org.apache.ctakes.assertion.medfacts.cleartk
+package org.apache.ctakes.clinicalpipeline
+package org.apache.ctakes.temporal.pipelines
+package com.text2phenotype.ctakes.rest.api.pipeline.helpers
+package com.text2phenotype.ctakes.rest.api.pipeline.ae
+
+load com/text2phenotype/ctakes/resources/config.piper
+
+add SimpleSegmentAnnotator SegmentID=SIMPLE_SEGMENT
+
+load com/text2phenotype/ctakes/resources/pipelineParts/Core.piper
+
+//add ContextDependentTokenizerAnnotator
+add TokenAdjuster
+load com/text2phenotype/ctakes/resources/pipelineParts/POSTagger.piper
+load com/text2phenotype/ctakes/resources/pipelineParts/LVG.piper
+//load com/text2phenotype/ctakes/resources/pipelineParts/Chunker.piper
+
+//add ClearNLPDependencyParserAE UseLemmatizer=false
+
+add BackwardsTimeAnnotatorWithCorrection classifierFactoryClassName=org.cleartk.ml.jar.JarClassifierFactory dataWriterFactoryClassName=org.cleartk.ml.jar.DefaultDataWriterFactory isTraining=false classifierJarPath=/org/apache/ctakes/temporal/ae/timeannotator/model.jar
+add TimeClassAnnotator isTraining=false dataWriterFactoryClassName=org.cleartk.ml.liblinear.LibLinearStringOutcomeDataWriter classifierJarPath=/com/text2phenotype/ctakes/resources/cleartk-timeml/timetype/model.jar
+
+set minimumSpan=2
+load com/text2phenotype/ctakes/resources/pipelineParts/DictionaryLookup.piper
+
+add MergeSimilarAnnotator
+
+add ContextualModalityAnnotator classifierFactoryClassName=org.cleartk.ml.jar.JarClassifierFactory dataWriterFactoryClassName=org.cleartk.ml.jar.DefaultDataWriterFactory isTraining=false classifierJarPath=/org/apache/ctakes/temporal/ae/contextualmodality/model.jar
+
+//add DocTimeRelAnnotator classifierFactoryClassName=org.cleartk.ml.jar.JarClassifierFactory dataWriterFactoryClassName=org.cleartk.ml.jar.DefaultDataWriterFactory isTraining=false classifierJarPath=/org/apache/ctakes/temporal/ae/doctimerel/model.jar
+load com/text2phenotype/ctakes/resources/pipelineParts/Assertion.piper
+//addDescription EventEventRelationAnnotator /org/apache/ctakes/temporal/ae/eventevent/model.jar
+//add com.text2phenotype.ctakes.rest.api.pipeline.ae.EventTimeRelationAnnotator classifierFactoryClassName=org.cleartk.ml.jar.JarClassifierFactory dataWriterFactoryClassName=org.cleartk.ml.jar.DefaultDataWriterFactory isTraining=false classifierJarPath=/com/text2phenotype/ctakes/resources/cleartk-timeml/eventtimeself/model.jar
+//addLogged com.text2phenotype.ctakes.rest.api.pipeline.ae.EventTimeRelationAnnotator classifierFactoryClassName=org.cleartk.ml.jar.JarClassifierFactory dataWriterFactoryClassName=org.cleartk.ml.jar.DefaultDataWriterFactory isTraining=false classifierJarPath=/org/apache/ctakes/temporal/ae/eventtime/model.jar

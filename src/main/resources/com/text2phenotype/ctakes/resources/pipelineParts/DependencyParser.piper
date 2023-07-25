@@ -1,0 +1,8 @@
+package com.text2phenotype.ctakes.rest.api.pipeline.helpers
+
+// add CachedComponent for=org.apache.ctakes.dependency.parser.ae.ClearNLPDependencyParserAE
+// add CachedComponent for=org.apache.ctakes.dependency.parser.ae.ClearNLPSemanticRoleLabelerAE
+// addLogged ClearNLPSemanticRoleLabelerAE
+
+// add org.apache.ctakes.dependency.parser.ae.ClearNLPDependencyParserAE
+// add org.apache.ctakes.dependency.parser.ae.ClearNLPSemanticRoleLabelerAE

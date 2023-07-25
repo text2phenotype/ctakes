@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:util="http:///org/apache/ctakes/typesystem/type/util.ecore" xmlns:tcas="http:///uima/tcas.ecore"
+         xmlns:xmi="http://www.omg.org/XMI" xmlns:cas="http:///uima/cas.ecore"
+         xmlns:type10="http:///org/cleartk/syntax/constituent/type.ecore" xmlns:ne="http:///org/cleartk/type/ne.ecore"
+         xmlns:textsem="http:///org/apache/ctakes/typesystem/type/textsem.ecore"
+         xmlns:type6="http:///org/apache/ctakes/smokingstatus/i2b2/type.ecore"
+         xmlns:refsem="http:///org/apache/ctakes/typesystem/type/refsem.ecore"
+         xmlns:type11="http:///org/cleartk/syntax/dependency/type.ecore"
+         xmlns:type="http:///de/tudarmstadt/ukp/dkpro/core/api/metadata/type.ecore"
+         xmlns:type14="http:///org/cleartk/util/type.ecore"
+         xmlns:assertion="http:///org/apache/ctakes/typesystem/type/temporary/assertion.ecore"
+         xmlns:type8="http:///org/cleartk/score/type.ecore"
+         xmlns:syntax="http:///org/apache/ctakes/typesystem/type/syntax.ecore"
+         xmlns:type9="http:///org/cleartk/srl/type.ecore"
+         xmlns:type2="http:///org/apache/ctakes/constituency/parser/uima/type.ecore"
+         xmlns:annotations="http:///com/text2phenotype/ctakes/rest/api/pipeline/annotations.ecore"
+         xmlns:types="http:///org/apache/ctakes/assertion/medfacts/types.ecore"
+         xmlns:type7="http:///org/apache/ctakes/smokingstatus/type.ecore"
+         xmlns:relation="http:///org/apache/ctakes/typesystem/type/relation.ecore"
+         xmlns:type12="http:///org/cleartk/timeml/type.ecore"
+         xmlns:type5="http:///org/apache/ctakes/sideeffect/type.ecore"
+         xmlns:token="http:///com/text2phenotype/ctakes/rest/api/pipeline/annotations/token.ecore"
+         xmlns:type15="http:///org/cleartk/ne/type.ecore" xmlns:type13="http:///org/cleartk/token/type.ecore"
+         xmlns:structured="http:///org/apache/ctakes/typesystem/type/structured.ecore"
+         xmlns:textspan="http:///org/apache/ctakes/typesystem/type/textspan.ecore"
+         xmlns:libsvm="http:///org/apache/ctakes/smokingstatus/type/libsvm.ecore"
+         xmlns:type3="http:///org/apache/ctakes/coreference/type.ecore"
+         xmlns:type4="http:///org/apache/ctakes/drugner/type.ecore" xmi:version="2.0">
+    <cas:NULL xmi:id="0"/>
+    <tcas:DocumentAnnotation xmi:id="8" sofa="1" begin="0" end="26" language="x-unspecified"/>
+    <textspan:Segment xmi:id="13" sofa="1" begin="0" end="26" id="SIMPLE_SEGMENT"/>
+    <textspan:Sentence xmi:id="19" sofa="1" begin="0" end="26" sentenceNumber="0"/>
+    <syntax:WordToken xmi:id="25" sofa="1" begin="0" end="7" tokenNumber="0" normalizedForm="aspirin" partOfSpeech="NNP"
+                      capitalization="1" numPosition="0" canonicalForm="aspirin"/>
+    <syntax:WordToken xmi:id="46" sofa="1" begin="10" end="14" tokenNumber="2" normalizedForm="tab" partOfSpeech="NNS"
+                      capitalization="0" numPosition="0" canonicalForm="tab"/>
+    <syntax:WordToken xmi:id="58" sofa="1" begin="15" end="20" tokenNumber="3" normalizedForm="twice" partOfSpeech="RB"
+                      capitalization="0" numPosition="0" canonicalForm="twice"/>
+    <syntax:WordToken xmi:id="70" sofa="1" begin="21" end="22" tokenNumber="4" normalizedForm="a" partOfSpeech="DT"
+                      capitalization="0" numPosition="0" canonicalForm="a"/>
+    <syntax:WordToken xmi:id="82" sofa="1" begin="23" end="26" tokenNumber="5" normalizedForm="day" partOfSpeech="NN"
+                      capitalization="0" numPosition="0" canonicalForm="day"/>
+    <syntax:NumToken xmi:id="37" sofa="1" begin="8" end="9" tokenNumber="1" partOfSpeech="CD" numType="1"/>
+    <structured:DocumentID xmi:id="94" documentID="b1143f0e-31fb-4dd5-96cc-7bb6d980720d"/>
+    <syntax:Chunk xmi:id="105" sofa="1" begin="0" end="26" chunkType="NP"/>
+    <syntax:Chunk xmi:id="110" sofa="1" begin="8" end="14" chunkType="NP"/>
+    <syntax:Chunk xmi:id="115" sofa="1" begin="15" end="26" chunkType="NP"/>
+    <textsem:MedicationMention xmi:id="144" sofa="1" begin="0" end="7" id="0" ontologyConceptArr="130 120" typeID="1"
+                               discoveryTechnique="1" confidence="0.2925" polarity="0" uncertainty="0"
+                               conditional="false" generic="false" historyOf="0" medicationFrequency="462"
+                               medicationStatusChange="396" medicationDosage="363" medicationForm="429"/>
+    <cas:Sofa xmi:id="1" sofaNum="1" sofaID="_InitialView" mimeType="text" sofaString="Aspirin 2 tabs twice a day"/>
+    <refsem:UmlsConcept xmi:id="130" codingScheme="RXNORM" code="1191" score="0.0" disambiguated="false" cui="C0004057"
+                        tui="T121" preferredText="Aspirin"/>
+    <refsem:UmlsConcept xmi:id="120" codingScheme="RXNORM" code="1191" score="0.0" disambiguated="false" cui="C0004057"
+                        tui="T109" preferredText="Aspirin"/>
+    <textsem:MedicationFrequencyModifier xmi:id="462" sofa="1" begin="15" end="26" id="0" typeID="0"
+                                         discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0"
+                                         conditional="false" generic="false" historyOf="0" normalizedForm="482"
+                                         category="2day"/>
+    <refsem:MedicationFrequency xmi:id="482" id="0" discoveryTechnique="0" confidence="0.0" conditional="false"
+                                generic="false" polarity="0" uncertainty="0" historyOf="0" number="2" unit="day"/>
+    <textsem:MedicationStatusChangeModifier xmi:id="396" sofa="1" begin="0" end="0" id="0" typeID="0"
+                                            discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0"
+                                            conditional="false" generic="false" historyOf="0" normalizedForm="416"
+                                            category="noChange"/>
+    <refsem:MedicationStatusChange xmi:id="416" id="0" discoveryTechnique="0" confidence="0.0" conditional="false"
+                                   generic="false" polarity="0" uncertainty="0" historyOf="0" value="noChange"/>
+    <textsem:MedicationDosageModifier xmi:id="363" sofa="1" begin="8" end="9" id="0" typeID="0" discoveryTechnique="0"
+                                      confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false"
+                                      historyOf="0" normalizedForm="383" category="2"/>
+    <refsem:MedicationDosage xmi:id="383" id="0" discoveryTechnique="0" confidence="0.0" conditional="false"
+                             generic="false" polarity="0" uncertainty="0" historyOf="0" value="2"/>
+    <textsem:MedicationFormModifier xmi:id="429" sofa="1" begin="10" end="14" id="0" typeID="0" discoveryTechnique="0"
+                                    confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false"
+                                    historyOf="0" normalizedForm="449" category="tablet"/>
+    <refsem:MedicationForm xmi:id="449" id="0" discoveryTechnique="0" confidence="0.0" conditional="false"
+                           generic="false" polarity="0" uncertainty="0" historyOf="0" value="tablet"/>
+    <cas:View sofa="1" members="8 13 19 25 46 58 70 82 37 94 105 110 115 144"/>
+</xmi:XMI>

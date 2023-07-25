@@ -1,0 +1,84 @@
+3.2G	.
+3.1G	./dictionaries
+1.6G	./dictionaries/npi
+496M	./dictionaries/general
+227M	./dictionaries/rxnorm
+195M	./dictionaries/snomedct
+151M	./dictionaries/original
+124M	./dictionaries/icd
+ 81M	./dictionaries/medgen
+ 68M	./dictionaries/loinc
+ 67M	./dictionaries/problem
+ 62M	./address
+ 26M	./dictionaries/icd10
+ 21M	./dictionaries/shrine
+ 16M	./dictionaries/hepc
+ 12M	./dictionaries/cpt
+9.8M	./dictionaries/cancer-topology
+4.8M	./dictionaries/healthcare
+4.7M	./dictionaries/lab-master
+2.9M	./dictionaries/icd9
+2.3M	./dictionaries/cancer-morphology
+1.4M	./dictionaries/hcc
+1.3M	./dictionaries/loinc-title
+384K	./dictionaries/covid
+196K	./dictionaries/cvx
+160K	./dictionaries/lab-common
+100K	./sentdetect
+ 96K	./dictionaries/loinc-section
+ 88K	./dictionaries/sectionizer
+ 72K	./cleartk-timeml
+ 48K	./dictionaries/ndfrt
+ 44K	./lab_values
+ 40K	./lab_values/dictionary
+ 40K	./cleartk-timeml/eventtimeself
+ 32K	./cleartk-timeml/timetype
+ 28K	./pipelineParts
+8.0K	./smoking_status
+4.0K	./tokenAdjuster
+4.0K	./temporal
+4.0K	./npi
+4.0K	./healthcheck
+4.0K	./ccda
+3.2G	.
+3.1G	./dictionaries
+1.6G	./dictionaries/npi
+496M	./dictionaries/general
+227M	./dictionaries/rxnorm
+195M	./dictionaries/snomedct
+151M	./dictionaries/original
+124M	./dictionaries/icd
+ 81M	./dictionaries/medgen
+ 68M	./dictionaries/loinc
+ 67M	./dictionaries/problem
+ 62M	./address
+ 26M	./dictionaries/icd10
+ 21M	./dictionaries/shrine
+ 16M	./dictionaries/hepc
+ 12M	./dictionaries/cpt
+9.8M	./dictionaries/cancer-topology
+4.8M	./dictionaries/healthcare
+4.7M	./dictionaries/lab-master
+2.9M	./dictionaries/icd9
+2.3M	./dictionaries/cancer-morphology
+1.4M	./dictionaries/hcc
+1.3M	./dictionaries/loinc-title
+384K	./dictionaries/covid
+196K	./dictionaries/cvx
+160K	./dictionaries/lab-common
+100K	./sentdetect
+ 96K	./dictionaries/loinc-section
+ 88K	./dictionaries/sectionizer
+ 72K	./cleartk-timeml
+ 48K	./dictionaries/ndfrt
+ 44K	./lab_values
+ 40K	./lab_values/dictionary
+ 40K	./cleartk-timeml/eventtimeself
+ 32K	./cleartk-timeml/timetype
+ 28K	./pipelineParts
+8.0K	./smoking_status
+4.0K	./tokenAdjuster
+4.0K	./temporal
+4.0K	./npi
+4.0K	./healthcheck
+4.0K	./ccda

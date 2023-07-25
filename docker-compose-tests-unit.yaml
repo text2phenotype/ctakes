@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  text2phenotype-py:
+    image: "docker.text2phenotype.com/text2phenotype-py:stage"
+    command: bin/docker-test-unit.sh
+    volumes:
+      - ../text2phenotype-samples:/app/text2phenotype-samples
+    networks:
+      text2phenotype-py:
+        aliases:
+          - text2phenotype-py
+
+networks:
+  text2phenotype-py:

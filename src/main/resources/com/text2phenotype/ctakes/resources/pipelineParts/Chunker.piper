@@ -1,0 +1,5 @@
+
+add com.text2phenotype.ctakes.rest.api.pipeline.ae.Chunker
+
+addDescription com.text2phenotype.ctakes.rest.api.pipeline.ae.ChunkAdjuster NP,NP 1
+addDescription com.text2phenotype.ctakes.rest.api.pipeline.ae.ChunkAdjuster NP,PP,NP 2

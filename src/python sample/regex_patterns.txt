@@ -1,0 +1,533 @@
+//supposed to match email addresses.Taken from Regexlib.com. Can an email start with a non-alphanumeric?
+%org.spin.scrubber.type.OntologyMatch
+#EMAIL_ADDRESS
+([a-zA-Z0-9_\-])+(\.([a-zA-Z0-9_\-])+)*@((\[(((([0-1])?([0-9])?[0-9])|(2[0-4][0-9])|(2[0-5][0-5])))\.(((([0-1])?([0-9])?[0-9])|(2[0-4][0-9])|(2[0-5][0-5])))\.(((([0-1])?([0-9])?[0-9])|(2[0-4][0-9])|(2[0-5][0-5])))\.(((([0-1])?([0-9])?[0-9])|(2[0-4][0-9])|(2[0-5][0-5]))\]))|((([a-zA-Z0-9])+(([\-])+([a-zA-Z0-9])+)*\.)+([a-zA-Z])+(([\-])+([a-zA-Z0-9])+)*))
+
+//Take out any telephone numbers
+%org.spin.scrubber.type.OntologyMatch
+#TELEPHONE2
+\s+[\\(]{0,1}([0-9]){3}[\\)]{0,1}[ ]?([^0-1]){1}([0-9]){2}[ ]?[-]?[ ]?([0-9]){4}[ ]*((x){0,1}([0-9]){1,5}){0,1}
+
+// Take out more telephone formats
+%org.spin.scrubber.type.OntologyMatch
+#TELEPHONE3
+((\(\d{3}\) ?)|(\d{3}[- \.]))?\d{3}[- \.]\d{4}( (x\d+)?){0,1}
+
+//better telephone
+%org.spin.scrubber.type.OntologyMatch
+#TELEPHONE0
+(([01][\.\- +]\(\d{3}\)[\.\- +]?)|([01][\.\- +]\d{3}[\.\- +])|(\(\d{3}\) ?)|(\d{3}[- \.]))?\d{3}[- \.]\d{4}
+
+//other telefone
+%org.spin.scrubber.type.OntologyMatch
+#TELEPHONE1
+(1?(-?\d{3})-?)?(\d{3})(-?\d{4})
+
+// extension number
+%org.spin.scrubber.type.OntologyMatch
+#EXTENSION
+(([E|e][X|x][T|t]?[E|e]?[N|n]?[S|s]?[I|i]?[O|o]?[N|n]?)\s+\d+)
+
+//matches IP address except of the form [1200.5.4.3], [abc.def.ghi.jkl], [255.foo.bar.1] .Taken from regexlib.com
+%org.spin.scrubber.type.OntologyMatch
+#IP
+(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])
+
+//To take out date of the form yyyy/m/d or yyyy/mm/dd or yyyy/mm/d or yyyy/m/dd
+%org.spin.scrubber.type.OntologyMatch
+#DATE
+\d{4}[-\.\/][0-3]?[0-9][-\.\/][0-3]?[0-9]
+
+// mm/dd/yy
+%org.spin.scrubber.type.OntologyMatch
+#DATE1
+((0?[13578]|10|12)(-|\/)((0[0-9])|([12])([0-9]?)|(3[01]?))(-|\/)((\d{4})|(\d{2}))|(0?[2469]|11)(-|\/)((0[0-9])|([12])([0-9]?)|(3[0]?))(-|\/)((\d{4}|\d{2})))
+
+//take out dates of the form mm/yyyy 
+%org.spin.scrubber.type.OntologyMatch
+#DATE2
+((0[1-9])|(1[0-2]))\/(\d{4})
+
+//take out dates of the form  YYYY-mm-dd
+%org.spin.scrubber.type.OntologyMatch
+#DATE3
+[0-9]{4}-(((0[13578]|(10|12))-(0[1-9]|[1-2][0-9]|3[0-1]))|(02-(0[1-9]|[1-2][0-9]))|((0[469]|11)-(0[1-9]|[1-2][0-9]|30)))
+
+// mm/yy
+%org.spin.scrubber.type.OntologyMatch
+#DATE4
+((0[1-9])|(1[0-2]))\/(\d{2})
+
+// take out dates of the form MMM dd, yyyy format from Jan 1, 1600 to Dec 31, 9999.
+%org.spin.scrubber.type.OntologyMatch
+#DATE5
+(?:(((Jan(uary)?|Ma(r(ch)?|y)|Jul(y)?|Aug(ust)?|Oct(ober)?|Dec(ember)?)\ 31)|((Jan(uary)?|Ma(r(ch)?|y)|Apr(il)?|Ju((ly?)|(ne?))|Aug(ust)?|Oct(ober)?|(Sept|Nov|Dec)(ember)?)\ (0?[1-9]|([12]\d)|30))|(Feb(ruary)?\ (0?[1-9]|1\d|2[0-8]|(29(?=,\ ((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)))))))\,\ ((1[6-9]|[2-9]\d)\d{2}))
+
+// uppercase date
+%org.spin.scrubber.type.OntologyMatch
+#DATE5_U
+(?:(((JAN(UARY)?|MA(R(CH)?|Y)|JUL(Y)?|AUG(UST)?|OCT(OBER)?|DEC(EMBER)?)\ 31)|((JAN(UARY)?|MA(R(CH)?|Y)|APR(IL)?|JU((LY?)|(NE?))|AUG(UST)?|OCT(OBER)?|(SEPT|NOV|DEC)(EMBER)?)\ (0?[1-9]|([12]\d)|30))|(FEB(RUARY)?\ (0?[1-9]|1\d|2[0-8]|(29(?=,\ ((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)))))))\,\ ((1[6-9]|[2-9]\d)\d{2}))
+
+// uppercase month
+%org.spin.scrubber.type.OntologyMatch
+#DATE6
+((31(?! (FEB|APR|JUN|SEP|NOV)))|((30|29)(?! FEB))|(29(?= FEB (((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)))))|(0?[1-9])|1\d|2[0-8]) (JAN|FEB|MAR|MAY|APR|JUL|JUN|AUG|OCT|SEP|NOV|DEC) ((1[6-9]|[2-9]\d)\d{2})
+
+// MM dd 
+%org.spin.scrubber.type.OntologyMatch
+#DATE7
+((?:J(anuary|u(ne|ly))|February|Ma(rch|y)|A(pril|ugust)|(((Sept|Nov|Dec)em)|Octo)ber)|(?:j(anuary|u(ne|ly))|february|ma(rch|y)|a(pril|ugust)|(((sept|nov|dec)em)|octo)ber)|(?:(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))|(?:(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)))( |\,)(\d{2}|\d)
+
+// dd MM 
+%org.spin.scrubber.type.OntologyMatch
+#DATE8
+(3[0-1]|2[0-9]|1[0-9]|0[1-9])[ ,]*((?:J(anuary|u(ne|ly))|February|Ma(rch|y)|A(pril|ugust)|(((Sept|Nov|Dec)em)|Octo)ber)|(?:j(anuary|u(ne|ly))|february|ma(rch|y)|a(pril|ugust)|(((sept|nov|dec)em)|octo)ber)|(?:(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))|(?:(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)))
+
+// dd MM yy?
+%org.spin.scrubber.type.OntologyMatch
+#DATE9
+(3[0-1]|2[0-9]|1[0-9]|0[1-9])[\s{1}|\/|-]((Jan|JAN|Feb|FEB|Mar|MAR|Apr|APR|May|MAY|Jun|JUN|Jul|JUL|Aug|AUG|Sep|SEP|Oct|OCT|Nov|NOV|Dec|DEC)|(January|JANUARY|February|FEBRUARY|March|MARCH|April|APRIL|May|MAY|June|JUNE|July|JULY|August|AUGUST|September|SEPTEMBER|October|OCTOBER|November|NOVEMBER|December|DECEMBER)|(january|february|march|april|may|june|july|august|september|october|november|december)|(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec))[\s{1}|\/|-](\d{4}|\d{2})?
+
+// ex: 9 July 1993 or 9 July of 1993
+%org.spin.scrubber.type.OntologyMatch
+#DATE11
+((31(?!\ (Feb(ruary)?|Apr(il)?|June?|(Sep(?=\b|t)t?|Nov)(ember)?)))|((30|29)(?!\ Feb(ruary)?))|(29(?=\ Feb(ruary)?\ (((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)))))|(0?[1-9])|1\d|2[0-8])\ (Jan(uary)?|Feb(ruary)?|Ma(r(ch)?|y)|Apr(il)?|Ju((ly?)|(ne?))|Aug(ust)?|Oct(ober)?|(Sep(?=\b|t)t?|Nov|Dec)(ember)?)\ (\s*of\s*)?((1[6-9]|[2-9]\d)\d{2})
+
+// ex: 8/4/93
+%org.spin.scrubber.type.OntologyMatch
+#DATE12
+(((0?[1-9]|[12]\d|3[01])[\.\-\/](0?[13578]|1[02])[\.\-\/]((1[6-9]|[2-9]\d)?\d{2}|\d))|((0?[1-9]|[12]\d|30)[\.\-\/](0?[13456789]|1[012])[\.\-\/]((1[6-9]|[2-9]\d)?\d{2}|\d))|((0?[1-9]|1\d|2[0-8])[\.\-\/]0?2[\.\-\/]((1[6-9]|[2-9]\d)?\d{2}|\d))|(29[\.\-\/]0?2[\.\-\/]((1[6-9]|[2-9]\d)?(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)|00|[048])))((\.|,))*
+
+//ex August 1995
+%org.spin.scrubber.type.OntologyMatch
+#DATE13
+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\,*\s\s*\d{4}|(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\,*\s\d{4}|(January|February|March|April|May|June|July|August|September|October|November|December)\,*\s\d{4}|(january|february|march|april|may|june|july|august|september|october|november|december)\,*\s\d{4}|(JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER)\,*\s\d{4}
+
+//ex: Jan of 2004
+%org.spin.scrubber.type.OntologyMatch
+#DATE14
+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)((\,*\s\s*)|\s+of\s+)(\d{4}|\d{2})|(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)((\,*\s\s*)|\s+of\s+)(\d{4}|\d{2})|(January|February|March|April|May|June|July|August|September|October|November|December)((\,*\s\s*)|\s+of\s+)(\d{4}|\d{2})|(january|february|march|april|may|june|july|august|september|october|november|december)((\,*\s\s*)|\s+of\s+)(\d{4}|\d{2})
+
+// ex: Jan 1st, January 3rd, August 16th
+%org.spin.scrubber.type.OntologyMatch
+#DATE15
+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)((\,*\s\s*)|\s+of\s+)(\d{4}|(\d+(st|nd|rd|th)))|(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)((\,*\s\s*)|\s+of\s+)(\d{4}|((\d+(st|nd|rd|th))))|(January|February|March|April|May|June|July|August|September|October|November|December)((\,*\s\s*)|\s+of\s+)(\d{4}|(\d{4}|(\d+(st|nd|rd|th))))|(january|february|march|april|may|june|july|august|september|october|november|december)((\,*\s\s*)|\s+of\s+)(\d{4}|(\d{4}|(\d+(st|nd|rd|th))))
+
+// ex: 2nd of November
+%org.spin.scrubber.type.OntologyMatch
+#DATE16
+((\d+(st|nd|rd|th)))((\,*|\s|\s+)|(\s+of\s+))(January|February|March|April|May|June|July|August|September|October|November|December)|((\d+(st|nd|rd|th)))((\,*|\s|\s+)|(\s+of\s+))(january|february|march|april|may|june|july|august|september|october|november|december)|((\d+(st|nd|rd|th)))((\,*|\s|\s+)|(\s+of\s+))(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)|((\d+(st|nd|rd|th)))((\,*|\s|\s+)|(\s+of\s+))(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)
+
+// ex: ii-05-99
+%org.spin.scrubber.type.OntologyMatch
+#DATE17
+([0-9lL]+?)[-,\/]([0-9iL]+?)[-,\/]([0-9iL]+?){2,4}
+
+// ex:     DISCHARGED:     4/2/94 
+%org.spin.scrubber.type.OntologyMatch
+#DATE18
+\d{1,2}(/|-)\d{1,2}(/|-)\d{1,2}(/.|,)*
+
+// ex: 10 March.
+%org.spin.scrubber.type.OntologyMatch
+#DATE19
+(\d{1,2}\s+)((January|February|March|April|June|July|August|September|October|November|December)|(january|february|march|april|june|july|august|september|october|november|december)|(Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Oct|Nov|Dec)|(jan|feb|mar|apr|jun|jul|aug|sep|oct|nov|dec)|(JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER))
+
+//ex in 01-96
+%org.spin.scrubber.type.OntologyMatch
+#DATE20
+in\s+\d{1,2}-\d{2,4}(/.|,)*
+
+// dd/yy
+%org.spin.scrubber.type.OntologyMatch
+#DATE21
+((0[1-9])|(1[0-2])|\d)/\d{2}
+
+// dd/mm
+%org.spin.scrubber.type.OntologyMatch
+#DATE22
+\d{1,2}\/(1[012]|[1-9])
+
+//(regexp ) Take out any dates in the format M/D/YY , M/D/YYYY, mm/dd/yyyy , mm/dd/yy , dd/mm/yy ,dd/mm/yyyy.The separator can be any of the following characters : ".","/","-"
+%org.spin.scrubber.type.OntologyMatch
+#DATE_SEPARATORS
+[^a-z^A-Z^0-9][0-3]?[0-9][-\./][0-3]?[0-9][-\./][0-9]{2,4}[^a-z^A-Z^%]+
+
+//all ages 10-100 divisible by 10 (was writtenAge1)
+%org.spin.scrubber.type.OntologyMatch
+#WRITTEN_AGE_10_100_DIV10
+(\s)+([Tt][Ee][Nn]|[Tt][Ww][Ee][Nn][Tt][Yy]|[Tt][hH][iI][Rr][Tt][Yy]|[Ff][Oo][Rr][Tt][Yy]|[Ff][Ii][Ff][Tt][Yy]|[Ss][Ii][Xx][Tt][Yy]|[Ss][Ee][Vv][Ee][Nn][Tt][Yy]|[Ee][Ii][Gg][Hh][Tt][Yy]|[Nn][Ii][Nn][Ee]?[Tt][Yy]|[Hh][Uu][Nn][Dd][Rr][Ee][Dd])[-\s]?((y(ea)?rs?)|(months?)|(days?)|(weeks?)|(wks?\.?))(\s+((old)|(of\s+age)))?\s
+
+//all ages from 110 to 119 (was writtenAge2)
+%org.spin.scrubber.type.OntologyMatch
+#WRITTEN_AGE_110_TO_119
+\s+([Oo][Nn][Ee])?\s+[Hh][Uu][Nn][Dd][Rr][Ee][Dd][-\s]?([Tt][Ee][Nn]|[Ee][Ll][Ee][Vv][Ee][Nn]|[Tt][Ww][Ee][Ll][Vv][Ee]|[Tt][Hh][Ii][Rr][Tt][Ee][Ee][Nn]|[Ff][Oo][Uu][Rr][Tt][Ee][Ee][Nn]|[Ff][Ii][Ff][Tt][Ee][Ee][Nn]|[sS][Ii][Xx][Tt][Ee][Ee][Nn]|[Ss][Ee][Vv][Ee][Nn][Tt][Ee][Ee][Nn]|[Ee][Ii][Gg][Hh][Tt][Ee][Ee][Nn]|[Nn][Ii][Nn][Ee][Tt][Ee][Ee][Nn])?[-\s]?((y(ea)?rs?)|(months?)|(days?)|(weeks?)|(wks?\.?))(\s+((old)|(of\s+age)))?\s
+
+//All ages from 20-99. (was writtenAge4)
+%org.spin.scrubber.type.OntologyMatch
+#WRITTEN_AGE_20_TO_99
+(\s)(([Tt][Ww][Ee][Nn][Tt][Yy])|([Tt][hH][iI][Rr][Tt][Yy])|[Ff]orty|[Ff]ifty|[Ss]ixty|[Ss]eventy|[Ee]ighty|[Nn]ine?ty)[-\s]?([Oo][Nn][Ee]|[Tt][Ww][Oo]|[Tt][Hh][Rr][Ee][Ee]|[Ff][Oo][Uu][Rr]|[Ff][Ii][Vv][Ee]|[sS][Ii][Xx]|[Ss][Ee][Vv][Ee][Nn]|[Ee][Ii][Gg][Hh][Tt]|[Nn][Ii][Nn][Ee])?[-\s]?(([yY](ea)?rs?)|([Mm]onths?)|([Dd]ays?)|([Ww]eeks?)|([Ww]ks?\.?))(\s+(([Oo]ld)|([Oo]f\s+[Aa]ge)))?\s
+
+//All ages from 1-19 (was writtenAge5)
+%org.spin.scrubber.type.OntologyMatch
+#WRITTEN_AGE_1_TO_19
+\s((aged|AGED)?(\s+)?([Oo][Nn][Ee]|[Tt][Ww][Oo]|[Tt][Hh][Rr][Ee][Ee]|[Ff][Oo][Uu][Rr]|[Ff][Ii][Vv][Ee]|[sS][Ii][Xx]|[Ss][Ee][Vv][Ee][Nn]|[Ee][Ii][Gg][Hh][Tt]|[Nn][Ii][Nn][Ee]|[Tt][Ee][Nn]|[Ee][Ll][Ee][Vv][Ee][Nn]|[Tt][Ww][Ee][Ll][Vv][Ee]|[Tt][Hh][Ii][Rr][Tt][Ee][Ee][Nn]|[Ff][Oo][Uu][Rr][Tt][Ee][Ee][Nn]|[Ff][Ii][Ff][Tt][Ee][Ee][Nn]|[sS][Ii][Xx][Tt][Ee][Ee][Nn]|[Ss][Ee][Vv][Ee][Nn][Tt][Ee][Ee][Nn]|[Ee][Ii][Gg][Hh][Tt][Ee][Ee][Nn]|[Nn][Ii][Nn][Ee][Tt][Ee][Ee][Nn]))[-\s]?((y(ea)?rs?)|(months?)|(days?)|(weeks?)|(wks?\.?))(\s+((old)|(of\s+age)))?\s
+
+//This should take out any mention of age followed by woman/man/male/female/m/f
+//([Mm](ale)?|[Ff](emale)?|[Ww](oman)?|[Mm](an)?)
+%org.spin.scrubber.type.OntologyMatch
+#AGE
+[^a-z^A-Z^0-9]([0-9]{1,3}[^a-z^A-Z^0-9]+([Mm](ale)?|[Ff](emale)?|[Ww](oman)?|[Mm](an)?|([Yy]/[Oo]))[^a-z^A-Z^0-9])
+
+//this works to take out any mention of the age.(or of this form -- "aged over 50"
+%org.spin.scrubber.type.OntologyMatch
+#AGED_OVER
+[\W_](([Aa]ged?|AGED?|AGE)([\W_](over))?[\W_]+[0-9]{1,3}[\W_])
+
+// The word Age followed by the age: ex AGE 77
+%org.spin.scrubber.type.OntologyMatch
+#AGE4
+(([Aa]ged?|AGED?|AGE)(:)*\s+[0-9]{1,3})
+
+// Age followed by gender i.e. 86 year old woman
+%org.spin.scrubber.type.OntologyMatch
+#AGE5
+(\d+)(\s+|-)([Y|y][E|e][A|a][R|r]([S|s]*))(\s+|-)(([O|o][L|l][D|d])*)(\s+|-)((man|MAN|[Mm](ale)?|[Ff](emale)?|([Ww](oman))?))
+
+//Allow for multiple non-numeric/non-alph characters between number and text
+%org.spin.scrubber.type.OntologyMatch
+#AGE6
+[^a-z^A-Z^0-9]([0-9]{1,3}[^a-z^A-Z^0-9]+(([yY](ea)?rs?)|([Ww]eeks?)|([Dd]ays?)|([Mm]onths?)|(MONTHS?)|(Y(EA)?RS?)|(WEEKS?)|(DAYS?)))
+
+//ex: age twenty - nine,
+%org.spin.scrubber.type.OntologyMatch
+#AGE7
+((age|aged|AGED)(\s+)(\w+)(\s+)(-|,)*(\s+)\w+)
+
+//ex: 77 yo
+%org.spin.scrubber.type.OntologyMatch
+#AGE8
+(\d{1,2})\s(yo)
+
+// note that these come after the other known identifiers like pt ssn, acc num, etc
+%org.spin.scrubber.type.OntologyMatch
+#SSN
+(?!000)([0-6]\d{2}|7([0-6]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}
+
+//Match all jr and sr
+%org.spin.scrubber.type.OntologyMatch
+#TITLES
+([Jj][rR]|[Ss][rR])\.?
+
+//Match all roman numeral III
+%org.spin.scrubber.type.OntologyMatch
+#TITLE_THIRD
+(^[Pp]art|^[Gg]rade):?\s+III\.?
+
+//Patient's Name
+%org.spin.scrubber.type.OntologyMatch
+#PATIENT_NAME
+(?i)(?:(?<=patient's name is )[\w\" ]+)|(?:(?<=patient name is )[\w\" ]+)|(?:(?<=patient's name )(?!is)[\w\" ]+)|(?:(?<=patient name )(?!is)[\w\" ]+)
+
+// this looks for key words to identify accession numbers by the word accession or any abbreviated form
+%org.spin.scrubber.type.OntologyMatch
+#ACCESSION
+(([Aa][Cc][Cc]\.?)|([Aa][Cc][Cc][Ee][Ss][Ss][Ii][Oo][Nn])|([Cc][Aa][Ss][Ee]))[^A-Z^a-z^0-9]+(([Nn][Uu][Mm]\.?)|(#)|[Nn]umber|NUMBER)[^A-Z^a-z^0-9]+[a-zA-Z]{1,3}[0-9]{1,12}[a-zA-Z]{0,3}[^A-Z^a-z^0-9]
+
+// accession number  KPNW format R98-87848 
+%org.spin.scrubber.type.OntologyMatch
+#ACCESSION_KP
+((\w\d{2}-(\d+)))
+
+//accession number  KPNW format R98-87848 
+%org.spin.scrubber.type.OntologyMatch
+#ACCESSION_KP2
+(\d{2}-\w\d{4})
+
+//record number KPNW
+%org.spin.scrubber.type.OntologyMatch
+#RN_KPNW
+\w\d{2}-\d{4,6}
+
+// mrn for KPNW with spaces
+%org.spin.scrubber.type.OntologyMatch
+#MRN_KPNW
+\d{4}\s+\d{2}\s+\d{2}
+
+//suspicious number 4-15 digits
+%org.spin.scrubber.type.OntologyMatch
+#SUSPICIOUS_NUM
+[0-9]{5,15}
+
+//2 numbers followed by a dash followed by a number larger than three digits
+%org.spin.scrubber.type.OntologyMatch
+#SUSPICIOUS_NUM2
+(\d{2,}?)(-\d{3,})+?
+
+//take out any year of the form 19-- or 20-- or mispelled "1" for "l"
+%org.spin.scrubber.type.OntologyMatch
+#YEAR_CENTURY
+(19|20|l9)[0-9]{2}
+
+// Single Month
+%org.spin.scrubber.type.OntologyMatch
+#MONTH
+((January|February|March|April|June|July|August|September|October|November|December)|(january|february|march|april|june|july|august|september|october|november|december)|(Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Oct|Nov|Dec)|(jan|feb|mar|apr|jun|jul|aug|sep|oct|nov|dec)|(JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER))\b
+
+//end/beginning/middle of single month: end of May.
+%org.spin.scrubber.type.OntologyMatch
+#MONTH2
+((((e|E)nd)|((B|b)eginning)|((M|m)iddle))\s+of\s+)((January|February|March|April|May|June|July|August|September|October|November|December)|(january|february|march|april|may|june|july|august|september|october|november|december)|(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)|(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)|(JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER))(\.|,)
+
+// Surgeon ex: SURGEON: T. Todd, M.D.
+%org.spin.scrubber.type.OntologyMatch
+#SURGEON
+(SURGEON\(S\)|SURGEON|SUREGON|Surgeon|surgeon)(:)*\s+(\w+)(\.)*\s+\w+\W+(\s*)((M|m)(\.)*(\s*)(D|d)(\.)*)(((\W*\s+\w+\W\s+\w+\W)\s+(((M|m)(\.)*(\s*)(D|d)(\.)*)))*)
+
+// Surgeon ex: SURGEON: Dr. Bernard
+%org.spin.scrubber.type.OntologyMatch
+#SURGEON2
+(SURGEON\(S\)|SURGEON|SUREGON|Surgeon|surgeon)(:)*\s+(D|d)(R|r)((\.)*)\s+\w+\b
+
+// Surgeon ex: D. Perez, D.P.M.
+%org.spin.scrubber.type.OntologyMatch
+#SURGEON3
+(SURGEON\(S\)|SURGEON|SUREGON|Surgeon|surgeon|ASST|asst|Asst)(:)*\s+(\w+)(\.)*\s+\w+\W+(\s*)((D|d)(\.)*(\s*)(P|p)(\.)*)(M|m)(\.)*(((\W*\s+\w+\W\s+\w+\W)\s+(((M|m)(\.)*(\s*)(D|d)(\.)*)))*)
+
+// Surgeon ex: SURGEON:                  F. Joseph, C.N.M.
+%org.spin.scrubber.type.OntologyMatch
+#SURGEON4
+(SURGEON\(S\)|SURGEON|SUREGON|Surgeon|surgeon|ASST|asst|Asst)(:)*\s+(\w+)(\.)*\s+\w+\W+(\s*)((C|c)(\.)*(\s*)(N|n)(\.)*)(M|m)(\.)*(((\W*\s+\w+\W\s+\w+\W)\s+(((M|m)(\.)*(\s*)(D|d)(\.)*)))*)
+
+// Surgeon (Suregon followed by any characters ending on MD) 
+%org.spin.scrubber.type.OntologyMatch
+#SURGEON5
+(SURGEON\(S\)|SURGEON|SUREGON|Surgeon|surgeon)(:)(\s+)*(.+)(M|m)(\.)*(D|d)(\.)*
+
+// Surgeon ex SURGEON:                  J. Ray, D.O.   
+%org.spin.scrubber.type.OntologyMatch
+#SURGEON6
+(SURGEON\(S\)|SURGEON|SUREGON|Surgeon|surgeon)(:)(\s+)*(.+)(D|d)(\.)*(O|o)(\.)*
+
+// Surgeon with Dr.
+%org.spin.scrubber.type.OntologyMatch
+#SURGEON7
+(SURGEON\(S\)|SURGEON|SUREGON|Surgeon|surgeon|ASST|asst|Asst)(:)*\s+(D|d)(\.)*(R|r)(\.)*(.+)
+
+// Surgeon ex: L. Dwight or single name
+%org.spin.scrubber.type.OntologyMatch
+#SURGEON8
+(SURGEON\(S\)|SURGEON|SUREGON|Surgeon|surgeon|ASST|asst|Asst)(:)*\s+((\w+)(\.)*(\s+)(\w+)|(\w+))
+
+// ASST: same as above
+%org.spin.scrubber.type.OntologyMatch
+#ASST
+(ASST?|asst?|assistant?|Assistant?|ASSISTANT\(S\)?)(:)*\s+(\w+)(\.)*\s+\w+\W+(\s*)((M|m)(\.)*(\s*)(D|d)(\.)*)(((\W*\s+\w+\W\s+\w+\W)\s+(((M|m)(\.)*(\s*)(D|d)(\.)*)))*)
+
+//ASST2
+%org.spin.scrubber.type.OntologyMatch
+#ASST2
+(ASST?|asst?|assistant?|Assistant?|ASSISTANT\(S\)?)(:)*\s+\w+\W\s*\w+\W\s+(((M|m)(\.)*(\s*)(D|d)(\.)*))*
+
+//ASST3 ex: ASST: M. Chap, S.A.
+%org.spin.scrubber.type.OntologyMatch
+#ASST3
+(ASST?|asst?|assistant?|Assistant?|ASSISTANT\(S\)?)(:)*\s+\w+\W\s*\w+\W\s+(((S|s)(\.)*(\s*)(A|a)(\.)*))*
+
+//PA ex Christine Fox, P.A.
+%org.spin.scrubber.type.OntologyMatch
+#PA
+(\w+)(\s+)(\w+)(,)*\s((P|p)(\.)+(A|a)(\.)+)
+
+//CC: same as above
+%org.spin.scrubber.type.OntologyMatch
+#CC
+(cc|CC)(:)*\s+(\w+)(\.)*\s+\w+\W+(\s*)((M|m)(\.)*(\s*)(D|d)(\.)*)(((\W*\s+\w+\W\s+\w+\W)\s+(((M|m)(\.)*(\s*)(D|d)(\.)*)))*)
+
+//CC with RN or MD
+%org.spin.scrubber.type.OntologyMatch
+#CC2
+(cc|CC)(:)*\s+(.+)(((R|r)(\.)*(N|n)(\.)*)|(M|m)(\.)*(D|d)(\.)*)
+
+//FROM:
+%org.spin.scrubber.type.OntologyMatch
+#FROM
+(FROM|From)(:)\s+(\w+)(\.)*\s+\w+(((M|m)(\.)*(\s*)(D|d)(\.)*))*
+
+//CONSULTATION
+%org.spin.scrubber.type.OntologyMatch
+#CONSULTATION
+(CONSULTATION)(:)*\s+(\w+)(\.)*\s+\w+\W+(\s*)((M|m)(\.)*(\s*)(D|d)(\.)*)(((\W*\s+\w+\W\s+\w+\W)\s+(((M|m)(\.)*(\s*)(D|d)(\.)*)))*)
+
+//TECHNOLOGIST
+%org.spin.scrubber.type.OntologyMatch
+#TECH
+(TECHNOLOGIST)(:)*\s+(\w+)(\.)*
+
+//Doctor 2-token-name. ex: Dr. Sam Smith. both names must be initialUppercase
+%org.spin.scrubber.type.OntologyMatch
+#DOCTOR0_00
+[dD][Rr][Ss]?[\.,]*\s+\w+\b\s+\w+\b
+
+// New Doctor rule ex: Dr. F. Gelman.
+%org.spin.scrubber.type.OntologyMatch
+#DOCTOR0_0
+(([dD][Rr]([Ss])?))(\.)*\s(\w|w+)(\.)*\s(\w+)
+
+//New doctor rule ex: Dr. Antonioni 
+%org.spin.scrubber.type.OntologyMatch
+#DOCTOR0_1
+(([dD][Rr]([Ss])?))(\.|,)*\s+\w+
+
+//New Doctor rule with ands: 
+%org.spin.scrubber.type.OntologyMatch
+#DOCTOR0_2
+(([dD][Rr]([Ss])?))(\.|,)*\s\w+\s(and|AND)\s(\w+)
+
+//Doctor
+%org.spin.scrubber.type.OntologyMatch
+#DOCTOR0
+(([dD][Rr]([Ss])?))(\.|,)*(\W\w+)(\W\w+)
+
+//Dr followed by a single name and punctuation
+%org.spin.scrubber.type.OntologyMatch
+#DOCTOR1
+(([dD][Rr])|([Dd]octor)|(DOCTOR))(\.|,)*(\s+)(\w+)(\.|,)
+
+// MD2
+%org.spin.scrubber.type.OntologyMatch
+#DOCTOR2
+\w+\W*\w+\s*\b(((M|m)(\.)*(\s*)(D|d)(\.)*))
+
+//DRS plural
+%org.spin.scrubber.type.OntologyMatch
+#DOCTOR3
+(Drs|DRS)(\.)*(.+)
+
+//Drs plural and
+%org.spin.scrubber.type.OntologyMatch
+#DOCTOR4
+(([dD][Rr]([Ss])?))(\.|,)*(\W\w+)(\W(and))(\W\w+)
+
+//put the older Dr regex. this should be a safety net incase the above regex is not satisfied.
+%org.spin.scrubber.type.OntologyMatch
+#DOCTOR_OLDER
+(([dD][Rr]([Ss])?)|([Dd]octor)s?|(DOCTORS?))[^a-zA-Z^0-9]+(\w+[^a-z^A-Z^0-9]+){1,3}
+
+// this line looks for DR|doctor followed by up to six "words"
+%org.spin.scrubber.type.OntologyMatch
+#DOCTOR_GEN
+(([dD][Rr]([Ss])?)|([Dd]octor)s?|(DOCTORS?))[\.](\s+)?([A-Z]([a-zA-Z]+)?([^a-z^A-Z^0-9]+|(and)|(AND))+){1,8}
+
+// ex: 3414 N. Kaiser Center Drive, Portland, OR 97227 -- dangerous regex may overmatch
+%org.spin.scrubber.type.OntologyMatch
+#ADDRESS
+(?i)\d+\s+((.+)(,|\s))((.+)(,|\s))(\s*)(?:A[LKSZRAEP]|C[AOT]|D[EC]|F[LM]|G[AU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])+(\s+|(,|\s))(\d{5}|(\d{5}-\d{4}))+
+
+//the following regex does this --- any number may be followed by an alpha(to take care of 200A longwood ave) ,followed by a space,one or more words separated by space and followed by one of the list of synonyms for street which is followed by a space or a comma .
+%org.spin.scrubber.type.OntologyMatch
+#ADDRESS2
+[^a-z^A-Z][0-9]{1,6}(\w+)?\s(\w+\s)+([sS]t|[sS]treet|[aA]venue|[aA]ve|[Bb]lvd|[bB]oulevard|[sS]uite|[pP]ark|[dD]rive|[dD]r|[lL]ane|[lL]n|[Ww]ay|[Pp]ky|[pP]arkway|[Rr]oute|rt|RT|Rt|[rR]oad|[rR]d|[pP]ass|Square|Sq|[Pp]laza|[lL]ink|[bB]end|[gG]ardens|[cC]ircle|[rR]ow|[tT]urn|[hH]wy|[hH]ighway|[cC]ir|[cC]ourt|[cC]rossing|[tT]rail|[rR]un|[pP]ike|[tT]errace|Place|[pP]l|[lL]oop|[pP]arade|[aA]lley)[^A-Za-z]?(\.)?[\s,]?([A-Z][a-zA-Z]+[^a-z^A-Z^0-9]+){1,5}((\d{5}(-)\d{4})|(\d{5}))?[^a-z^A-Z^0-9]?
+
+// ex: 123 Anywhere Dr. Somewhere, ST 55789 
+%org.spin.scrubber.type.OntologyMatch
+#ADDRESS4
+[ \w]{3,}(\w+\.)?([ \w]*\#\d+)?(\r\n| )[ \w]{3,},\x20[A-Za-z]{2}\x20\d{5}(-\d{4})?
+
+//ex:SALEM OR  97310-1020
+%org.spin.scrubber.type.OntologyMatch
+#ADDRESS5
+(?i)\w+(,)*\s+(?:A[LKSZRAEP]|C[AOT]|D[EC]|F[LM]|G[AU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])\s+\d{5}(-\d{4})*
+
+//ex:2045 Fake Name South West STREET
+%org.spin.scrubber.type.OntologyMatch
+#ADDRESS6
+\d+(\s+\w+){1,6}\s+(STREET|ST|AVENUE|AVE|BBLVD|BOULEVARD|SUITE|PARK|DRIVE|DR|LNE|LN|WAY|PKY|PARKWAY|ROUTE|RT|ROAD|RD|PASS|SQUARE|SQ|PLAZA|LINK|GARDENS|CIRCLE|ROW|TURN|HWY|HIGHWAY|CIR|COURT|CROSSING|TRAIL|RUN|PIKE|TERRACE|PLACE|PPL|LOOP|PARADE|ALLEY)(\.)*\s+([Nn]orth|[Ss]outh|[Ee]ast|[Ww]est|NE|ne|SE|se|NW|nw|SW|sw)*
+
+// ex:501 N. Graham, Suite 500
+%org.spin.scrubber.type.OntologyMatch
+#ADDRESS7
+(?i)\d+(.*)\W(STREET|ST|AVENUE|AVE|BBLVD|BOULEVARD|SUITE|PARK|DRIVE|DR|LNE|LN|WAY|PKY|PARKWAY|ROUTE|RT|ROAD|RD|PASS|SQUARE|SQ|PLAZA|LINK|GARDENS|CIRCLE|ROW|TURN|HWY|HIGHWAY|CIR|COURT|CROSSING|TRAIL|RUN|PIKE|TERRACE|PLACE|PPL|LOOP|PARADE|ALLEY)(\W\d+)*
+
+//ex: 1211 SW 5TH
+%org.spin.scrubber.type.OntologyMatch
+#ADDRESS8
+(\d+?)\W[NnSsEeWw\.]+\W\w+
+
+//ex: PO BOX 8004
+%org.spin.scrubber.type.OntologyMatch
+#POBOX
+(?i)[PO\.]+\W[BOX\.]+\W\d+
+
+// ROOM 680
+%org.spin.scrubber.type.OntologyMatch
+#ROOM
+(?i)(ROOM)\W(.*?)\d+
+
+//Take out any 5 numbers-4 numbers since they are assumed to be zip codes
+%org.spin.scrubber.type.OntologyMatch
+#ZIP_CODE
+(\d{5}(-)\d{4})
+
+// Discharged ex DISCHARGED:  JANUARY 12, 2001
+%org.spin.scrubber.type.OntologyMatch
+#DISCHARGED
+(?i)(discharged)(:)\s+\w+\s+(\d{2}|\d)(\,|\s+)\s*(\d{4}|\d{2})
+
+// Discharged ex. DISCHARGED:     08-12-95
+%org.spin.scrubber.type.OntologyMatch
+#DISCHARGED2
+(?i)(discharged)(:)\s+(\d{1,})(-)(\d{1,})(-)(\d{1,})
+
+// Mr. Fitch
+%org.spin.scrubber.type.OntologyMatch
+#MR
+(?i)(MR)(\.)*(\W\w+)
+
+// Ms. Fitch or Mrs. Fitch
+%org.spin.scrubber.type.OntologyMatch
+#MS
+(?i)(MS|MRS)(\.)*(\W\w+)
+
+//doctor name found in subheadings. ex.) Attending : Fitch, Britt, <DISTINCTION>
+//where <DISTINCTION> is in (rn, md, cnm, np)
+//max length is 30 chars for name to prevent matching areas that are not actually subheadings.
+%org.spin.scrubber.type.OntologyMatch
+#DOCTOR_SUBHEAD
+(:)+\s+(.){1,30}\s+(((R|r)(\.)*(N|n)(\.)*)|(M|m)(\.)*(D|d)(\.)*|(C|c)(\.)*(N|n)(\.)*(M|m)(\.)*|(N|n)(\.)*(P|p)(\.)*)\s+
+
+//match 4th floor, 2nd fl, etc...
+#LOCATION_FLOOR_1
+(?i)(\d{1,3})(nd|rd|st|th)\s+(floor|flr|fl)
+
+//match 4th floor, 2nd fl, etc...
+#LOCATION_FLOOR_2
+(?i)(floor|flr|fl)(\.)*\s+(\d{1,3})
+
+//match hospital names in initialUppercase ex.) Mass General Hospital, Children's hospital, Superman Memorial Regional Medical Center 
+//max length of 6 tokens to prevent runaway matching
+//may want to add in more hospital matching regex for better classification?
+#HOSPITAL_1
+((\s+|\b)[A-Z][\w]*\b(\.|'s)*){1,5}\s+(([Hh]ospital|[Hh]osp|[Cc]enter|[Cc]entre|[Cc]ntr|[Cc]tr|[Cc]linic))
+
+//match hospital names in ALL Uppercase ex.) MASS GENERAL HOSPITAL 
+//to prevent runaway matching this will match unlimited times from a set of common building words for hospital names and 1 preceding word in ALL UPPERCASE
+//may want to add in more hospital matching regex for better classification?
+#HOSPITAL_2
+((\s+|\b)[A-Z0-9_-]*\b(\.|'[s|S])*){1}\s+((MEMORIAL|MEM|COUNTY|REGIONAL|REG|MEDICAL|MED|HEALTH|DISTRICT|DIST|REHABILITATION|REHAB|GENERAL|GEN|COMMUNITY|COMM|UNIVERSITY|UNIV)+(\.)*\s+)+(HOSPITAL|HOSP|CENTER|CENTRE|CNTR|CTR|CLINIC)
+
+//id format for i2b2 smoking de-id data
+#ID_I2B2_SMOK
+(\d{3})-(\d{2})-(\d{2})-(\d{1})
+
+//id format for i2b2 smoking de-id data
+#ID_I2B2_SMOK_2
+(\d{3})-(\d{2})-(\d{2})-(\d{1})\s+[A-Za-z0-9]{3}\b
+
+//id format for i2b2 smoking de-id data. ex.) TR: fooID (will ignore the token 'TR: ')
+#ID_I2B2_SMOK_3
+(?i)((?<=TR:)|(?<=TR :)|(?<=TR: )|(?<=TR : ))[A-Za-z0-9]*\b
+
+//format date in the format: 'on the 22nd', 'on the 31st', etc... (will ignore the tokens 'on the')
+#DATE_23
+(?i)((?<=\bon the )|(?<=\bonthe )|(?<=\bonthe)|(?<=\bon the))\d+(st|nd|rd|th)

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<lookupSpecification>
+    <dictionaries>
+        <dictionary>
+            <name>LabUnitsDict</name>
+            <implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.BsvRareWordDictionary</implementationName>
+            <properties>
+                <property key="bsvPath" value="com/text2phenotype/ctakes/resources/lab_values/dictionary/units.bsv"/>
+            </properties>
+        </dictionary>
+    </dictionaries>
+
+    <conceptFactories>
+        <conceptFactory>
+            <name>LabUnitsConcepts</name>
+            <implementationName>org.apache.ctakes.dictionary.lookup2.concept.BsvConceptFactory</implementationName>
+            <properties>
+                <property key="bsvPath" value="com/text2phenotype/ctakes/resources/lab_values/dictionary/units.bsv"/>
+            </properties>
+        </conceptFactory>
+    </conceptFactories>
+
+    <dictionaryConceptPairs>
+        <dictionaryConceptPair>
+            <name>LabUnitsPair</name>
+            <dictionaryName>LabUnitsDict</dictionaryName>
+            <conceptFactoryName>LabUnitsConcepts</conceptFactoryName>
+        </dictionaryConceptPair>
+    </dictionaryConceptPairs>
+
+    <rareWordConsumer>
+        <name>Term Consumer</name>
+        <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.consumers.AnnotationClassConsumer</implementationName>
+        <properties>
+            <property key="annotationClass" value="com.text2phenotype.ctakes.rest.api.pipeline.annotations.UnitAnnotation"/>
+        </properties>
+    </rareWordConsumer>
+
+</lookupSpecification>

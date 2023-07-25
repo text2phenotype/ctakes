@@ -1,0 +1,5 @@
+add PcsClassifierAnnotator_libsvm CaseSensitive=false
+add CopyAnnotator srcObjClass=org.apache.uima.jcas.tcas.DocumentAnnotation destObjClass=org.apache.ctakes.typesystem.type.textspan.Sentence dataBindMap=getBegin|setBegin,getEnd|setEnd
+add SentenceAdjuster UseSegments=False SegmentsToSkip=1,2 WordsToIgnore=1,2 WordsInPattern=no,none,never,quit,smoked,:
+add DictionaryLookupAnnotator
+addLogged org.apache.ctakes.necontexts.ContextAnnotator MaxLeftScopeSize=7 MaxRightScopeSize=7 ContextHitConsumerClass=org.apache.ctakes.necontexts.negation.NegationContextHitConsumer ContextAnalyzerClass=org.apache.ctakes.necontexts.negation.NegationContextAnalyzer

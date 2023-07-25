@@ -1,0 +1,1 @@
+classpath*:com/text2phenotype/ctakes/resources/TypeSystem.xml

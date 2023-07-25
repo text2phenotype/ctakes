@@ -1,0 +1,176 @@
+{
+	"docId": "19104ec8-8c5f-4326-85a3-1b7b61a2141b",
+	"genderDiscrepancy": null,
+	"dob": null,
+	"gender": null,
+	"age": null,
+	"labValues": [
+		{
+			"id": null,
+			"sentence": [
+				0,
+				13
+			],
+			"sectionOffset": [
+				0,
+				13
+			],
+			"text": [
+				"BUN",
+				0,
+				3
+			],
+			"sectionOid": "SIMPLE_SEGMENT",
+			"attributes": {
+				"polarity": "positive",
+				"generic": "false",
+				"conditional": "false",
+				"modality": "N/A",
+				"uncertainty": "false",
+				"labValue": [
+					"normal",
+					7,
+					13
+				],
+				"labValueUnit": []
+			},
+			"aspect": null,
+			"name": null,
+			"umlsConcept": [
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "Blood urea nitrogen measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "Urea Nitrogen, Blood"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "Measurement of blood urea nitrogen (BUN)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "Urea - blood"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "BUN measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "ASSAY OF UREA NITROGEN QUANTITATIVE"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "BUN level"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "Nitrogen, Blood Urea"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "Urea nitrogen; quantitative"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "Measurement of urea nitrogen (BUN)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "BUN"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "Blood urea (procedure)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "Blood urea measurement"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "ASSAY OF UREA NITROGEN"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "Blood urea measurement (procedure)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "blood urea nitrogen measurement (lab test)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "Blood urea nitrogen measurement (procedure)"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "Blood Urea Nitrogen"
+				},
+				{
+					"code": "",
+					"tui": "T034",
+					"codingScheme": "LNC",
+					"cui": "C0005845",
+					"preferredText": "Blood urea"
+				}
+			]
+		}
+	]
+}

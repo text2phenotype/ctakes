@@ -1,0 +1,4 @@
+Jinja2
+j2cli[yaml]
+pyyaml
+awscli

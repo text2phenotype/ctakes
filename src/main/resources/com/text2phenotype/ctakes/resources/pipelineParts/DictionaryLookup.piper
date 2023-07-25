@@ -1,0 +1,4 @@
+package com.text2phenotype.ctakes.rest.api.pipeline.helpers
+
+set minimumSpan=1
+add com.text2phenotype.ctakes.rest.api.pipeline.ae.Text2phenotypeCasTermAnnotator exclusionTags=VB

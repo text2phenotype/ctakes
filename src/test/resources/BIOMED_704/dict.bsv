@@ -1,0 +1,2 @@
+// CUI|TUI|CODE|VOCAB|TXT|PREF TEXT
+C000001|T034|1|CUSTOM|white cell|White cell count

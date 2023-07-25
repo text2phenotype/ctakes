@@ -1,0 +1,1 @@
+//ClinicalDocument/component/structuredBody/component/section/text/*

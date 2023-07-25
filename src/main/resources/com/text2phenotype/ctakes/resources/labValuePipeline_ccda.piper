@@ -1,0 +1,29 @@
+package com.text2phenotype.ctakes.rest.api.pipeline.helpers
+package com.text2phenotype.ctakes.rest.api.pipeline.ae
+
+load com/text2phenotype/ctakes/resources/config.piper
+
+add CCDASectionAnnotator
+
+load com/text2phenotype/ctakes/resources/pipelineParts/Core.piper
+add ContextDependentTokenizerAnnotator
+add TokenAdjuster
+add TimeAnnotator24h
+load com/text2phenotype/ctakes/resources/pipelineParts/POSTagger.piper
+
+//load com/text2phenotype/ctakes/resources/pipelineParts/LVG.piper
+//add ClearNLPDependencyParserAE
+
+// Lab mentions annotator
+set minimumSpan=2
+load com/text2phenotype/ctakes/resources/pipelineParts/DictionaryLookup.piper
+
+load com/text2phenotype/ctakes/resources/pipelineParts/DependencyParser.piper
+load com/text2phenotype/ctakes/resources/pipelineParts/Assertion.piper
+
+add LabValuesDetectionEnhancer
+
+add MergeSimilarAnnotator
+
+add LabValueExtractionAnnotator labValueWords=normal
+//add LabValuesAnnotatorSequence classifierJarPath=/com/text2phenotype/ctakes/resources/lab_values/model.jar labValueWords=normal
