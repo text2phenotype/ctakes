@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lookupSpecification>
+    <dictionaries>
+        <dictionary><name>shrine_icd9_dict</name><implementationName>com.text2phenotype.ctakes.rest.api.pipeline.dictionary.BsvRareWordDictionaryWithSAB</implementationName><properties><property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/shrine/HMS_SHRINE_ICD9.bsv"/></properties></dictionary>
+    </dictionaries>
+    <conceptFactories>
+        <conceptFactory><name>shrine_icd9_concepts</name><implementationName>com.text2phenotype.ctakes.rest.api.pipeline.concept.BsvConceptFactoryWithSAB</implementationName><properties><property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/shrine/HMS_SHRINE_ICD9.bsv"/></properties></conceptFactory>
+    </conceptFactories>
+    <dictionaryConceptPairs>
+        <dictionaryConceptPair><name>shrine_icd9_pair</name><dictionaryName>shrine_icd9_dict</dictionaryName><conceptFactoryName>shrine_icd9_concepts</conceptFactoryName></dictionaryConceptPair>
+    </dictionaryConceptPairs>
+    <rareWordConsumer>
+        <name>shrine icd9 Consumer</name>
+        <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.consumers.FilteredDefaultTermConsumer</implementationName>
+        <properties>
+            <property key="codingScheme" value="ICD9"/>
+        </properties>
+    </rareWordConsumer>
+</lookupSpecification>

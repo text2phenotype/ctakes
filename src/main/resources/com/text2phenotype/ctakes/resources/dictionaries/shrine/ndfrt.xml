@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lookupSpecification>
+    <dictionaries>
+        <dictionary><name>shrine_ndfrt_dict</name><implementationName>com.text2phenotype.ctakes.rest.api.pipeline.dictionary.BsvRareWordDictionaryWithSAB</implementationName><properties><property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/shrine/HMS_SHRINE_NDFRT.bsv"/></properties></dictionary>
+    </dictionaries>
+    <conceptFactories>
+        <conceptFactory><name>shrine_ndfrt_concepts</name><implementationName>com.text2phenotype.ctakes.rest.api.pipeline.concept.BsvConceptFactoryWithSAB</implementationName><properties><property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/shrine/HMS_SHRINE_NDFRT.bsv"/></properties></conceptFactory>
+    </conceptFactories>
+    <dictionaryConceptPairs>
+        <dictionaryConceptPair><name>shrine_ndfrt_pair</name><dictionaryName>shrine_ndfrt_dict</dictionaryName><conceptFactoryName>shrine_ndfrt_concepts</conceptFactoryName></dictionaryConceptPair>
+    </dictionaryConceptPairs>
+    <rareWordConsumer>
+        <name>shrine ndfrt Consumer</name>
+        <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.consumers.FilteredDefaultTermConsumer</implementationName>
+        <properties>
+            <property key="codingScheme" value="NDFRT"/>
+        </properties>
+    </rareWordConsumer>
+</lookupSpecification>

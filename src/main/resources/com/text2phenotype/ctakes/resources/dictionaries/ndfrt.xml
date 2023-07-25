@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lookupSpecification>
+    <dictionaries>
+        <dictionary><name>ndfrt_dict</name><implementationName>com.text2phenotype.ctakes.rest.api.pipeline.dictionary.BsvRareWordDictionaryWithSAB</implementationName><properties><property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/ndfrt/ndfrt.bsv"/></properties></dictionary>
+    </dictionaries>
+    <conceptFactories>
+        <conceptFactory><name>ndfrt_concepts</name><implementationName>com.text2phenotype.ctakes.rest.api.pipeline.concept.BsvConceptFactoryWithSAB</implementationName><properties><property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/ndfrt/ndfrt.bsv"/></properties></conceptFactory>
+    </conceptFactories>
+    <dictionaryConceptPairs>
+        <dictionaryConceptPair><name>ndfrt_pair</name><dictionaryName>ndfrt_dict</dictionaryName><conceptFactoryName>ndfrt_concepts</conceptFactoryName></dictionaryConceptPair>
+    </dictionaryConceptPairs>
+    <rareWordConsumer>
+        <name>ndfrt Consumer</name>
+        <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.consumers.FilteredDefaultTermConsumer</implementationName>
+        <properties>
+            <property key="codingScheme" value="ndfrt"/>
+            <property key="precisionMode" value="true"/>
+        </properties>
+    </rareWordConsumer>
+</lookupSpecification>

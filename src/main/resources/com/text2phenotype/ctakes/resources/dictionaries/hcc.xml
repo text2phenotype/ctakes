@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lookupSpecification>
+    <dictionaries>
+        <dictionary><name>hcc_dict</name><implementationName>com.text2phenotype.ctakes.rest.api.pipeline.dictionary.BsvRareWordDictionaryWithSAB</implementationName><properties><property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/hcc/hcc.bsv"/></properties></dictionary>
+    </dictionaries>
+    <conceptFactories>
+        <conceptFactory><name>hcc_concepts</name><implementationName>com.text2phenotype.ctakes.rest.api.pipeline.concept.BsvConceptFactoryWithSAB</implementationName><properties><property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/hcc/hcc.bsv"/></properties></conceptFactory>
+    </conceptFactories>
+    <dictionaryConceptPairs>
+        <dictionaryConceptPair><name>hcc_pair</name><dictionaryName>hcc_dict</dictionaryName><conceptFactoryName>hcc_concepts</conceptFactoryName></dictionaryConceptPair>
+    </dictionaryConceptPairs>
+    <rareWordConsumer>
+        <name>hcc Consumer</name>
+        <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.consumers.FilteredDefaultTermConsumer</implementationName>
+        <properties>
+            <property key="codingScheme" value="hcc"/>
+            <property key="precisionMode" value="true"/>
+        </properties>
+    </rareWordConsumer>
+</lookupSpecification>

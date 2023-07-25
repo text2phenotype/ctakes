@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lookupSpecification>
+  <dictionaries>
+    <dictionary><name>medgen_dict</name>
+    <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.dictionary.BsvRareWordDictionaryFlex</implementationName>
+    <properties>
+      <property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/medgen/medgen.bsv"/>
+      <property key="CUI" value="0"/>
+      <property key="TERM" value="5"/>	
+    </properties>      
+    </dictionary>
+  </dictionaries>
+  <conceptFactories>
+    <conceptFactory>
+      <name>medgen_concepts</name>
+      <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.concept.BsvConceptFactoryFlex</implementationName>
+      <properties>
+	<property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/medgen/medgen.bsv"/>
+        <property key="scheme" value="CUI|TUI|TTY|CODE|SAB|STR|PREF"/>
+      </properties>
+    </conceptFactory>
+  </conceptFactories>
+  <dictionaryConceptPairs>
+    <dictionaryConceptPair>
+      <name>medgen_pair</name>
+      <dictionaryName>medgen_dict</dictionaryName>
+      <conceptFactoryName>medgen_concepts</conceptFactoryName>
+    </dictionaryConceptPair>
+  </dictionaryConceptPairs>
+  <rareWordConsumer>
+    <name>medgen Consumer</name>
+    <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.consumers.FilteredDefaultTermConsumer</implementationName>
+    <properties>
+      <property key="codingScheme" value="medgen"/>
+      <property key="precisionMode" value="true"/>
+    </properties>
+  </rareWordConsumer>
+</lookupSpecification>

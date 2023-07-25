@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<lookupSpecification>
+<dictionaries>
+   <dictionary>
+      <name>rxnormTerms</name>
+       <implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.JdbcRareWordDictionary</implementationName>
+       <properties>
+           <property key="jdbcDriver" value="org.hsqldb.jdbcDriver"/>
+           <property key="jdbcUrl" value="jdbc:hsqldb:file:com/text2phenotype/ctakes/resources/dictionaries/rxnorm/rxnorm"/>
+           <property key="jdbcUser" value="sa"/>
+           <property key="jdbcPass" value=""/>
+           <property key="rareWordTable" value="cui_terms"/>
+       </properties>
+   </dictionary>
+</dictionaries>
+
+<conceptFactories>
+   <conceptFactory>
+      <name>rxnormConcepts</name>
+      <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.concept.ExtendedJdbcConceptFactory</implementationName>
+       <properties>
+           <property key="jdbcDriver" value="org.hsqldb.jdbcDriver"/>
+           <property key="jdbcUrl" value="jdbc:hsqldb:file:com/text2phenotype/ctakes/resources/dictionaries/rxnorm/rxnorm"/>
+           <property key="jdbcUser" value="sa"/>
+           <property key="jdbcPass" value=""/>
+           <property key="tuiTable" value="tui"/>
+           <property key="prefTermTable" value="prefTerm"/>
+           <property key="rxnormTable" value="long"/>
+           <!--<property key="snomedct_usTable" value="long"/>-->
+       </properties>
+   </conceptFactory>
+</conceptFactories>
+
+<!--  Defines what terms and concepts will be used  -->
+<dictionaryConceptPairs>
+   <dictionaryConceptPair>
+      <name>rxnormPair</name>
+      <dictionaryName>rxnormTerms</dictionaryName>
+      <conceptFactoryName>rxnormConcepts</conceptFactoryName>
+   </dictionaryConceptPair>
+</dictionaryConceptPairs>
+
+<rareWordConsumer>
+   <name>Term Consumer</name>
+   <implementationName>org.apache.ctakes.dictionary.lookup2.consumer.DefaultTermConsumer</implementationName>
+
+   <properties>
+         <property key="codingScheme" value="rxnorm"/>
+   </properties>
+</rareWordConsumer>
+
+</lookupSpecification>

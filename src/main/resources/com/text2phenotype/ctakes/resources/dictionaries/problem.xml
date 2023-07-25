@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lookupSpecification>
+    <dictionaries>
+        <dictionary>
+            <name>problem_dict</name>
+            <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.dictionary.BsvRareWordDictionaryFlex</implementationName>
+            <properties>
+                <property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/problem/bsv_problem.bsv"/>
+                <property key="CUI" value="0"/>
+                <property key="TERM" value="5"/>
+            </properties>
+        </dictionary>
+    </dictionaries>
+    <conceptFactories>
+        <conceptFactory>
+            <name>problem_concepts</name>
+            <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.concept.BsvConceptFactoryFlex</implementationName>
+            <properties>
+                <property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/problem/bsv_problem.bsv"/>
+                <property key="scheme" value="CUI|TUI|TTY|CODE|SAB|STR|PREF"/>
+            </properties>
+        </conceptFactory>
+    </conceptFactories>
+    <dictionaryConceptPairs>
+        <dictionaryConceptPair>
+            <name>problem_pair</name>
+            <dictionaryName>problem_dict</dictionaryName>
+            <conceptFactoryName>problem_concepts</conceptFactoryName>
+        </dictionaryConceptPair>
+    </dictionaryConceptPairs>
+    <rareWordConsumer>
+        <name>problem Consumer</name>
+        <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.consumers.FilteredDefaultTermConsumer</implementationName>
+        <properties>
+            <property key="codingScheme" value="problem"/>
+            <property key="precisionMode" value="true"/>
+        </properties>
+    </rareWordConsumer>
+</lookupSpecification>

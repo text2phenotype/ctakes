@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lookupSpecification>
+    <dictionaries>
+        <dictionary>
+            <name>lab_master_drug_dict</name>
+            <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.dictionary.BsvRareWordDictionaryFlex</implementationName>
+            <properties>
+                <property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/lab-master/bsv_lab_master.bsv"/>
+                <property key="CUI" value="0"/>
+                <property key="TERM" value="5"/>
+            </properties>
+        </dictionary>
+    </dictionaries>
+    <conceptFactories>
+        <conceptFactory>
+            <name>lab_master_drug_concepts</name>
+            <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.concept.BsvConceptFactoryFlex</implementationName>
+            <properties>
+                <property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/lab-master/bsv_lab_master.bsv"/>
+                <property key="scheme" value="CUI|TUI|TTY|CODE|SAB|STR|PREF"/>
+            </properties>
+        </conceptFactory>
+    </conceptFactories>
+    <dictionaryConceptPairs>
+        <dictionaryConceptPair>
+            <name>lab_master_drug_pair</name>
+            <dictionaryName>lab_master_drug_dict</dictionaryName>
+            <conceptFactoryName>lab_master_drug_concepts</conceptFactoryName>
+        </dictionaryConceptPair>
+    </dictionaryConceptPairs>
+    <rareWordConsumer>
+        <name>lab_master_drug Consumer</name>
+        <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.consumers.FilteredDefaultTermConsumer</implementationName>
+        <properties>
+            <property key="codingScheme" value="lab-master"/>
+            <property key="precisionMode" value="true"/>
+        </properties>
+    </rareWordConsumer>
+</lookupSpecification>

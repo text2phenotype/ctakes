@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lookupSpecification>
+    <dictionaries>
+        <dictionary>
+            <name>loinc-mimic_dict</name>
+            <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.dictionary.BsvRareWordDictionaryFlex</implementationName>
+            <properties>
+                <property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/loinc/lab_mimic.bsv"/>
+                <property key="CUI" value="0"/>
+                <property key="TERM" value="5"/>
+            </properties>
+        </dictionary>
+    </dictionaries>
+    <conceptFactories>
+        <conceptFactory>
+            <name>loinc-mimic_concepts</name>
+            <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.concept.BsvConceptFactoryFlex</implementationName>
+            <properties>
+                <property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/loinc/lab_mimic.bsv"/>
+                <property key="scheme" value="CUI|TUI|TTY|CODE|SAB|STR|PREF"/>
+            </properties>
+        </conceptFactory>
+    </conceptFactories>
+    <dictionaryConceptPairs>
+        <dictionaryConceptPair>
+            <name>loinc-mimic_pair</name>
+            <dictionaryName>loinc-mimic_dict</dictionaryName>
+            <conceptFactoryName>loinc-mimic_concepts</conceptFactoryName>
+        </dictionaryConceptPair>
+    </dictionaryConceptPairs>
+    <rareWordConsumer>
+        <name>loinc-mimic Consumer</name>
+        <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.consumers.FilteredDefaultTermConsumer</implementationName>
+        <properties>
+            <property key="codingScheme" value="loinc-mimic"/>
+            <property key="precisionMode" value="true"/>
+        </properties>
+    </rareWordConsumer>
+</lookupSpecification>

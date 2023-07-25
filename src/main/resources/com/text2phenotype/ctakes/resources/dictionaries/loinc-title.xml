@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lookupSpecification>
+    <dictionaries>
+        <dictionary>
+            <name>loinc-title_dict</name>
+            <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.dictionary.BsvRareWordDictionaryFlex</implementationName>
+            <properties>
+                <property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/loinc-title/loinc_title.bsv"/>
+                <property key="CUI" value="0"/>
+                <property key="TERM" value="5"/>
+            </properties>
+        </dictionary>
+    </dictionaries>
+    <conceptFactories>
+        <conceptFactory>
+            <name>loinc-title_concepts</name>
+            <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.concept.BsvConceptFactoryFlex</implementationName>
+            <properties>
+                <property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/loinc-title/loinc_title.bsv"/>
+                <property key="scheme" value="CUI|TUI|TTY|CODE|SAB|STR|PREF"/>
+            </properties>
+        </conceptFactory>
+    </conceptFactories>
+    <dictionaryConceptPairs>
+        <dictionaryConceptPair>
+            <name>loinc-title_pair</name>
+            <dictionaryName>loinc-title_dict</dictionaryName>
+            <conceptFactoryName>loinc-title_concepts</conceptFactoryName>
+        </dictionaryConceptPair>
+    </dictionaryConceptPairs>
+    <rareWordConsumer>
+        <name>loinc-title Consumer</name>
+        <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.consumers.FilteredDefaultTermConsumer</implementationName>
+        <properties>
+            <property key="codingScheme" value="loinc-title"/>
+            <property key="precisionMode" value="true"/>
+        </properties>
+    </rareWordConsumer>
+</lookupSpecification>

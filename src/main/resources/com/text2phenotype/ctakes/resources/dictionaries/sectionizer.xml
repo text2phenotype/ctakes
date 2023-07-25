@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lookupSpecification>
+    <dictionaries>
+        <dictionary>
+            <name>sectionizer_dict</name>
+            <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.dictionary.BsvRareWordDictionaryFlex</implementationName>
+            <properties>
+                <property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/sectionizer/sectionizer.bsv"/>
+                <property key="CUI" value="0"/>
+                <property key="TERM" value="5"/>
+            </properties>
+        </dictionary>
+    </dictionaries>
+    <conceptFactories>
+        <conceptFactory>
+            <name>sectionizer_concepts</name>
+            <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.concept.BsvConceptFactoryFlex</implementationName>
+            <properties>
+                <property key="bsvPath" value="com/text2phenotype/ctakes/resources/dictionaries/sectionizer/sectionizer.bsv"/>
+                <property key="scheme" value="CUI|TUI|TTY|CODE|SAB|STR|PREF"/>
+            </properties>
+        </conceptFactory>
+    </conceptFactories>
+    <dictionaryConceptPairs>
+        <dictionaryConceptPair>
+            <name>sectionizer_pair</name>
+            <dictionaryName>sectionizer_dict</dictionaryName>
+            <conceptFactoryName>sectionizer_concepts</conceptFactoryName>
+        </dictionaryConceptPair>
+    </dictionaryConceptPairs>
+    <rareWordConsumer>
+        <name>Sectionizer Consumer</name>
+        <implementationName>com.text2phenotype.ctakes.rest.api.pipeline.consumers.FilteredDefaultTermConsumer</implementationName>
+        <properties>
+            <property key="codingScheme" value="sectionizer"/>
+            <property key="precisionMode" value="true"/>
+        </properties>
+    </rareWordConsumer>
+</lookupSpecification>
